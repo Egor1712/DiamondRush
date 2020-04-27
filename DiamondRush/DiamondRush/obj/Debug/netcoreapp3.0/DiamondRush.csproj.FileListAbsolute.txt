@@ -1,0 +1,11 @@
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\bin\Debug\netcoreapp3.0\DiamondRush.exe
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\bin\Debug\netcoreapp3.0\DiamondRush.deps.json
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\bin\Debug\netcoreapp3.0\DiamondRush.runtimeconfig.json
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\bin\Debug\netcoreapp3.0\DiamondRush.runtimeconfig.dev.json
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\bin\Debug\netcoreapp3.0\DiamondRush.dll
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\bin\Debug\netcoreapp3.0\DiamondRush.pdb
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\obj\Debug\netcoreapp3.0\DiamondRush.csprojAssemblyReference.cache
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\obj\Debug\netcoreapp3.0\DiamondRush.AssemblyInfoInputs.cache
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\obj\Debug\netcoreapp3.0\DiamondRush.AssemblyInfo.cs
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\obj\Debug\netcoreapp3.0\DiamondRush.dll
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\obj\Debug\netcoreapp3.0\DiamondRush.pdb
