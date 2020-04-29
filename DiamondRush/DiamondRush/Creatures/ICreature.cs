@@ -2,10 +2,12 @@
 
 namespace DiamondRush
 {
-    public interface creature : IDrawable
+    public interface ICreature : IDrawable
     {
         void Move(GameState gameState);
         Point Location { get; set; }
         Direction Direction { get; set; }
+        void CollapseWithPlayer(GameState gameState, Player player);
+        void ReactOnWeapon(IWeapon weapon);
     }
 }

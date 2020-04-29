@@ -11,16 +11,18 @@ namespace DiamondRush
         public Timer Timer;
         public MyForm()
         {
+            CreateAllMaps();
             CreateAllImages();
             WindowState = FormWindowState.Maximized;
-            var size = Screen.GetWorkingArea(Bounds);
-            GameState = new GameState(size.Width/30, size.Height/30,
+            var size = Screen.GetBounds(Location);
+            GameState = new GameState(size.Width/45, size.Height/45-1,
                 new Player(new Point(5,5),Direction.Right ));
             Timer = new Timer
             {
-                Interval = 10
+                Interval = 80
             };
-            
+            GameState.ParseEnvironment(MapOfEnvironment);
+            GameState.ParseCreatures(MapOfCreatures);
             Paint += (sender, args) => GameState.Draw(args.Graphics); 
             Timer.Tick += (sender, args) => GameState.UpdateState();
             Timer.Tick += (sender, args) => Invalidate();

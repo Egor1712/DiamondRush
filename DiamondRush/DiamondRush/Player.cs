@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using static DiamondRush.Resources;
 
@@ -7,45 +8,60 @@ namespace DiamondRush
     public class Player
     {
         public Point Location { get; set; }
-        public Direction Direction { get; set; }
-        public int Health { get; set; }
-        public string ImageName { get; }
+        public Direction Direction { get; private set; }
+        public int Health { get; private set; }
+        public int Score { get; private set; }
+        private Point LastCheckPoint { get; set; }
+        public List<IWeapon> Weapons = new List<IWeapon>();
+        public string ImageName => $"Player{Direction}";
 
         public Player(Point location, Direction direction)
         {
             Location = location;
             Direction = direction;
             Health = 3;
-            ImageName = "PlayerRight";
         }
+
+        public void BeatPlayer()
+        {
+            if (Health > 1)
+                Health--;
+            else
+            {
+                Location = LastCheckPoint;
+                Health = 4;
+            }
+        }
+
+        public void ChangeCheckPoint(Point point) => LastCheckPoint = point;
 
         public void Move(GameState gameState, Direction direction)
         {
+            Direction = direction;
             var nextPoint = new Point(Location.X + DirectionToPoints[direction].X,
                 Location.Y + DirectionToPoints[direction].Y);
             if (gameState.InBounds(nextPoint))
             {
-                (var environment, var creature) = gameState[nextPoint];
-                if (CanCollapse(environment))
-                    Location = nextPoint;
-                if (environment is Stone stone
-                    && (Direction == Direction.Left || Direction == Direction.Right)
-                    && stone.CanMoveToRightOrLeft(Direction,gameState))
+                (var environment, var creature) = gameState[nextPoint.Y,nextPoint.X];
+                if (environment == null)
                 {
+                    if (creature != null)
+                    {
+                        creature.CollapseWithPlayer(gameState, gameState.Player);
+                        return;
+                    }
+
                     Location = nextPoint;
-                    gameState.MoveEnviroment(nextPoint, 
-                        new Point(nextPoint.X + DirectionToPoints[Direction].X, nextPoint.Y + DirectionToPoints[Direction].Y));
+                    return;
                 }
-
-                if (environment == null && creature == null)
-                    Location = nextPoint;
-
+                if (creature == null)
+                    environment.CollapseWithPlayer(gameState,this);
             }
         }
 
-        private bool CanCollapse(IEnvironment environment)
+        public void AddScore(int score)
         {
-            return environment is Foliage;
+            Score += score;
         }
         
         public void ChangeDirection(Keys key)

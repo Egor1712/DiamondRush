@@ -12,14 +12,67 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/947CFA9E-93C5-4D21-8EE6-CD975672A1F8/cb/e28060cc/Dictionary`2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/526E29B5-C0FA-4E54-A4E0-5B4A65E04EE8/5/Point.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/IDrawable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Environments/Stone.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Environments/wall.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Environments/Foliage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Environments/IEnvironment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Environments/Diamond.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tests/StoneShould.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Environments/CheckPoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tests/SimplleSnakeShould.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Weapon/Hammer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tests/FoliageShould.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Creatures/ICreature.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Creatures/SimpleSnake.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Weapon/IWeapon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GameState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Resources.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Direction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Form1.Designer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MyForm.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/IEnvironment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/04FF2274-FFE3-42EA-B15A-BE272D0A6B6E/3A/Control.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/MyForm.cs" />
         <option value="$PROJECT_DIR$/../../README.md" />
+        <option value="$PROJECT_DIR$/Stone_should.cs" />
+        <option value="$PROJECT_DIR$/Foliage.cs" />
+        <option value="$PROJECT_DIR$/IEnvironment.cs" />
+        <option value="$PROJECT_DIR$/MyForm.cs" />
+        <option value="$PROJECT_DIR$/CheckPoint.cs" />
+        <option value="$PROJECT_DIR$/Stone.cs" />
+        <option value="$PROJECT_DIR$/Diamond.cs" />
+        <option value="$PROJECT_DIR$/ICreature.cs" />
+        <option value="$PROJECT_DIR$/Player.cs" />
+        <option value="$PROJECT_DIR$/SimpleSnake.cs" />
+        <option value="$PROJECT_DIR$/StoneShould.cs" />
+        <option value="$PROJECT_DIR$/FoliageShould.cs" />
+        <option value="$PROJECT_DIR$/SimplleSnakeShould.cs" />
+        <option value="$PROJECT_DIR$/wall.cs" />
+        <option value="$PROJECT_DIR$/Resources.cs" />
+        <option value="$PROJECT_DIR$/GameState.cs" />
+        <option value="$PROJECT_DIR$/Program.cs" />
+        <option value="$PROJECT_DIR$/Tests/FoliageShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/SimplleSnakeShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/StoneShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/WallShould.cs" />
+        <option value="$PROJECT_DIR$/IWeapon.cs" />
+        <option value="$PROJECT_DIR$/Creatures/ICreature.cs" />
+        <option value="$PROJECT_DIR$/Creatures/SimpleSnake.cs" />
+        <option value="$PROJECT_DIR$/Environments/IEnvironment.cs" />
+        <option value="$PROJECT_DIR$/Environments/CheckPoint.cs" />
+        <option value="$PROJECT_DIR$/Environments/Diamond.cs" />
+        <option value="$PROJECT_DIR$/Environments/Stone.cs" />
+        <option value="$PROJECT_DIR$/Environments/wall.cs" />
+        <option value="$PROJECT_DIR$/Environments/Foliage.cs" />
+        <option value="$PROJECT_DIR$/Weapon/Hammer.cs" />
+        <option value="$PROJECT_DIR$/Weapon/IWeapon.cs" />
       </list>
     </option>
   </component>
@@ -43,7 +96,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected=".NET Project.Default">
     <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/bin/Debug/netcoreapp3.0/DiamondRush.dll" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -74,20 +127,28 @@
       <option name="presentableId" value="Default" />
       <updated>1588001845775</updated>
       <workItem from="1588001875872" duration="1950000" />
+      <workItem from="1588004088900" duration="2948000" />
+      <workItem from="1588050591963" duration="6919000" />
+      <workItem from="1588060489194" duration="2546000" />
+      <workItem from="1588136816389" duration="4445000" />
+      <workItem from="1588142227016" duration="11344000" />
+      <workItem from="1588155509336" duration="6032000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -103,6 +164,19 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Tests/FoliageShould.cs</url>
+          <line>22</line>
+          <properties documentPath="$PROJECT_DIR$/Tests/FoliageShould.cs" initialLine="23">
+            <startOffsets>
+              <option value="623" />
+            </startOffsets>
+            <endOffsets>
+              <option value="700" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

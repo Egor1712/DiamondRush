@@ -9,3 +9,11 @@ C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\obj\De
 C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\obj\Debug\netcoreapp3.0\DiamondRush.AssemblyInfo.cs
 C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\obj\Debug\netcoreapp3.0\DiamondRush.dll
 C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\obj\Debug\netcoreapp3.0\DiamondRush.pdb
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\bin\Debug\netcoreapp3.0\nunit.framework.dll
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\obj\Debug\netcoreapp3.0\DiamondRush.csproj.CopyComplete
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\bin\Debug\netcoreapp3.0\NUnit3.TestAdapter.dll
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\bin\Debug\netcoreapp3.0\NUnit3.TestAdapter.pdb
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\bin\Debug\netcoreapp3.0\nunit.engine.dll
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\bin\Debug\netcoreapp3.0\nunit.engine.api.dll
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\bin\Debug\netcoreapp3.0\Microsoft.DotNet.InternalAbstractions.dll
+C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush\bin\Debug\netcoreapp3.0\System.Xml.XPath.XmlDocument.dll

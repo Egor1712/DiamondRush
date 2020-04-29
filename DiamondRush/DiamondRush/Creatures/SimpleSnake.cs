@@ -3,33 +3,49 @@ using static DiamondRush.Resources;
 
 namespace DiamondRush
 {
-    public class SimpleSnake : creature
+    public class SimpleSnake : ICreature
     {
         public Point Location { get; set; }
+        public string ImageName => $"Snake{Direction}";
         public Direction Direction { get; set; }
-        public string ImageName { get; }
-
-
+        public int BlockedSteps { get; private set; }
+        
         public SimpleSnake(Point startLocation, Direction startDirection)
         {
             Location = startLocation;
             Direction = startDirection;
-            ImageName = "Snake";
+        }
+
+        public void CollapseWithPlayer(GameState gameState, Player player)
+        {
+            player.Location = Location;
+            player.BeatPlayer();
+        }
+
+        public void ReactOnWeapon(IWeapon weapon)
+        {
+            if (weapon is Hammer)
+            {
+                BlockedSteps += 100;
+                return;
+            }
         }
 
         public void Move(GameState gameState)
         {
             var nextPoint = new Point(Location.X + DirectionToPoints[Direction].X,
                 Location.Y + DirectionToPoints[Direction].Y);
-            if (gameState.InBounds(nextPoint))
+            if (gameState.InBounds(nextPoint.X,nextPoint.Y))
             {
-                var tuple = gameState[nextPoint];
-                if (tuple.Creature != null)
+                if (nextPoint.Equals(gameState.Player.Location))
                 {
-                    Direction = OppositeDirection[Direction];
+                    gameState.MoveCreature(Location, nextPoint);
+                    Location = nextPoint;
+                    gameState.Player.BeatPlayer();
                     return;
                 }
-                if (tuple.Enviroment !=  null)
+                (var environment, var creature) = gameState[nextPoint.Y,nextPoint.X];
+                if (creature != null || environment != null)
                 {
                     Direction = OppositeDirection[Direction];
                     return;
