@@ -31,7 +31,7 @@ namespace DiamondRush.Tests
         }
 
         [Test]
-        public void StoneShouldBEatPlayer()
+        public void StoneShouldBeatPlayer()
         {
             var gameState = new GameState(1,3,new Player(new Point(0,2), Direction.Down ));
             gameState.ParseEnvironment(@"S");
@@ -40,7 +40,7 @@ namespace DiamondRush.Tests
             gameState.UpdateState();
             Assert.AreEqual(new Point(0,1), stone.Location );
             gameState.UpdateState();
-            Assert.AreEqual(new Point(0,2), stone.Location);
+            Assert.AreEqual(new Point(0,1), stone.Location);
             Assert.AreEqual(2, gameState.Player.Health);
         }
 

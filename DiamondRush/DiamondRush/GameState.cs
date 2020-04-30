@@ -17,7 +17,7 @@ namespace DiamondRush
         private readonly ICreature[,] creatures;
         private readonly HashSet<IEnvironment> environmentsHS;
         private readonly HashSet<ICreature> creaturesHS;
-        public Player Player;
+        public Player Player { get; }
 
         public GameState(int width, int height, Player player)
         {

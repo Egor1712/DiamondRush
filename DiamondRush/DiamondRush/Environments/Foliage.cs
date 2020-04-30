@@ -24,12 +24,9 @@ namespace DiamondRush
         {
         }
 
-        public void ReactOnWeapon(IWeapon weapon,  GameState gameState)
+        public void ReactOnWeapon(Weapon weapon,  GameState gameState)
         {
-            if (weapon is Hammer)
-            {
-                gameState.RemoveEnvironment(this);
-            }
+            gameState.RemoveEnvironment(this);
         }
 
         public override int GetHashCode()

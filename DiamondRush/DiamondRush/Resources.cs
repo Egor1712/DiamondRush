@@ -68,6 +68,12 @@ namespace DiamondRush
                     return new CheckPoint {Location = location};
                 case 'W' :
                     return new Wall {Location = location};
+                case 'H' :
+                    return new Chest(new Hammer(), location);
+                case 'R':
+                    return new Chest(new FrozenHammer(),location);
+                case 'E' :
+                    return new FragileWall(location);
             }
 
             return null;

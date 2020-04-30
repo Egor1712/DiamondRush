@@ -9,6 +9,7 @@ namespace DiamondRush
         public string ImageName => $"Snake{Direction}";
         public Direction Direction { get; set; }
         public int BlockedSteps { get; private set; }
+        public bool IsFrozen { get; private set; }
         
         public SimpleSnake(Point startLocation, Direction startDirection)
         {
@@ -22,17 +23,22 @@ namespace DiamondRush
             player.BeatPlayer();
         }
 
-        public void ReactOnWeapon(IWeapon weapon)
+        public void ReactOnWeapon(Weapon weapon)
         {
-            if (weapon is Hammer)
-            {
-                BlockedSteps += 100;
-                return;
-            }
+            BlockedSteps += weapon.Force;
+            IsFrozen = weapon.IsFrozen;
         }
 
         public void Move(GameState gameState)
         {
+            if (BlockedSteps > 0)
+            {
+                BlockedSteps --;
+                return;
+            }
+
+            IsFrozen = false;
+            
             var nextPoint = new Point(Location.X + DirectionToPoints[Direction].X,
                 Location.Y + DirectionToPoints[Direction].Y);
             if (gameState.InBounds(nextPoint.X,nextPoint.Y))

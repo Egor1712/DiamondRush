@@ -8,6 +8,6 @@ namespace DiamondRush
         Point Location { get; set; }
         void CollapseWithPlayer(GameState gameState, Player player);
         void Move(GameState gameState);
-        void ReactOnWeapon(IWeapon weapon, GameState gameState);
+        void ReactOnWeapon(Weapon weapon, GameState gameState);
     }
 }

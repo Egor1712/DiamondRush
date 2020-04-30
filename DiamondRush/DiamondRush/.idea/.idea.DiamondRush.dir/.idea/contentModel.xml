@@ -17,8 +17,10 @@
       <e p="Direction.cs" t="Include" />
       <e p="Environments" t="Include">
         <e p="CheckPoint.cs" t="Include" />
+        <e p="Chest.cs" t="Include" />
         <e p="Diamond.cs" t="Include" />
         <e p="Foliage.cs" t="Include" />
+        <e p="FragileWall.cs" t="Include" />
         <e p="IEnvironment.cs" t="Include" />
         <e p="Stone.cs" t="Include" />
         <e p="wall.cs" t="Include" />
@@ -39,11 +41,16 @@
       <e p="Program.cs" t="Include" />
       <e p="Resources.cs" t="Include" />
       <e p="Tests" t="Include">
+        <e p="CheckPointShould.cs" t="Include" />
+        <e p="ChestShould.cs" t="Include" />
         <e p="FoliageShould.cs" t="Include" />
-        <e p="SimplleSnakeShould.cs" t="Include" />
+        <e p="HammerShould.cs" t="Include" />
+        <e p="SimpleSnakeShould.cs" t="Include" />
         <e p="StoneShould.cs" t="Include" />
+        <e p="WallShould.cs" t="Include" />
       </e>
       <e p="Weapon" t="Include">
+        <e p="FrozenHammer.cs" t="Include" />
         <e p="Hammer.cs" t="Include" />
         <e p="IWeapon.cs" t="Include" />
       </e>

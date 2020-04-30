@@ -2,10 +2,12 @@
 
 namespace DiamondRush
 {
-    public class Wall : IEnvironment
+    public class FragileWall : IEnvironment
     {
-        public string ImageName => "Wall";
+        public string ImageName => "FragileWall";
         public Point Location { get; set; }
+
+        public FragileWall(Point location) => Location = location;
 
         public void CollapseWithPlayer(GameState gameState, Player player)
         {
@@ -13,11 +15,11 @@ namespace DiamondRush
 
         public void Move(GameState gameState)
         {
-
         }
 
         public void ReactOnWeapon(Weapon weapon, GameState gameState)
         {
+            gameState.RemoveEnvironment(this);   
         }
     }
 }

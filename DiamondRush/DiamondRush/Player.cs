@@ -11,26 +11,36 @@ namespace DiamondRush
         public Direction Direction { get; private set; }
         public int Health { get; private set; }
         public int Score { get; private set; }
-        private Point LastCheckPoint { get; set; }
-        public List<IWeapon> Weapons = new List<IWeapon>();
+        private Point LastCheckPoint { get;  set; }
+        public Weapon CurrentWeapon { get; private set; }
+        private readonly List<Weapon> weapons = new List<Weapon>();
         public string ImageName => $"Player{Direction}";
 
-        public Player(Point location, Direction direction)
+        public Player(Point location, Direction direction, int health = 3)
         {
             Location = location;
             Direction = direction;
-            Health = 3;
+            Health = health;
         }
 
+        public void AddWeapon(Weapon weapon)
+        {
+            weapons.Add(weapon);
+            CurrentWeapon = weapon;
+        }
+
+        public void ResetPlayer()
+        {
+            Location = LastCheckPoint;
+            Health = 3;
+        }
+        
         public void BeatPlayer()
         {
             if (Health > 1)
                 Health--;
             else
-            {
-                Location = LastCheckPoint;
-                Health = 4;
-            }
+               ResetPlayer();
         }
 
         public void ChangeCheckPoint(Point point) => LastCheckPoint = point;
@@ -59,14 +69,22 @@ namespace DiamondRush
             }
         }
 
+        public IEnumerable<Weapon> EnumerateAllWeapons() => weapons;
+
+        public void ChangeWeapon(Weapon weapon) => CurrentWeapon = weapon;
+        public void UseWeapon(GameState gameState)
+        {
+            CurrentWeapon?.DoWork(gameState, Direction);
+        }
+
         public void AddScore(int score)
         {
             Score += score;
         }
         
-        public void ChangeDirection(Keys key)
+        public void ChangeDirection(Direction direction)
         {
-            Direction = KeysToDirection[key];
+            Direction = direction;
         }
     }
 }

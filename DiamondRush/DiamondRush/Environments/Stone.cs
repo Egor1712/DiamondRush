@@ -35,9 +35,8 @@ namespace DiamondRush
                 {
                     if (FallHeight >= 1)
                     {
-                        gameState.MoveEnvironment(Location,nextPoint);
-                        Location = nextPoint;
                         gameState.Player.BeatPlayer();
+                        FallHeight = 0;
                     }
                     return;
                 }
@@ -63,7 +62,7 @@ namespace DiamondRush
             FallHeight = 0;
         }
 
-        public void ReactOnWeapon(IWeapon weapon,  GameState gameState)
+        public void ReactOnWeapon(Weapon weapon,  GameState gameState)
         {
         }
 

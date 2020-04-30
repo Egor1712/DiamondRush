@@ -15,9 +15,13 @@ namespace DiamondRush
 
         public void Move(GameState gameState)
         {
+            if (Location.Equals(gameState.Player.Location))
+            {
+                gameState.Player.ChangeCheckPoint(Location);
+            }
         }
 
-        public void ReactOnWeapon(IWeapon weapon,  GameState gameState)
+        public void ReactOnWeapon(Weapon weapon,  GameState gameState)
         {
         }
     }

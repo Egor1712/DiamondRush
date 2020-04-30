@@ -7,8 +7,6 @@ namespace DiamondRush
     {
         private static Direction direction = Direction.Down;
         public string ImageName => "Diamond";
-        public int FallHeight { get; private set; }
-
         public Point Location { get; set; }
 
         public void CollapseWithPlayer(GameState gameState, Player player)
@@ -32,12 +30,11 @@ namespace DiamondRush
                 {
                     gameState.MoveEnvironment(Location, nextPoint);
                     Location = nextPoint;
-                    FallHeight++;
                 }
             }
         }
 
-        public void ReactOnWeapon(IWeapon weapon,  GameState gameState)
+        public void ReactOnWeapon(Weapon weapon,  GameState gameState)
         {
         }
     }
