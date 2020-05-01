@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
+using DiamondRush.Creatures;
 
-namespace DiamondRush
+namespace DiamondRush.Environments
 {
     public class Foliage : IEnvironment
     {
@@ -24,7 +25,7 @@ namespace DiamondRush
         {
         }
 
-        public void ReactOnWeapon(Weapon weapon,  GameState gameState)
+        public void ReactOnWeapon(Weapon.Weapon weapon,  GameState gameState)
         {
             gameState.RemoveEnvironment(this);
         }

@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using static DiamondRush.Resources;
 
-namespace DiamondRush
+namespace DiamondRush.Creatures
 {
     public class SimpleSnake : ICreature
     {
@@ -10,6 +10,7 @@ namespace DiamondRush
         public Direction Direction { get; set; }
         public int BlockedSteps { get; private set; }
         public bool IsFrozen { get; private set; }
+        
         
         public SimpleSnake(Point startLocation, Direction startDirection)
         {
@@ -23,9 +24,9 @@ namespace DiamondRush
             player.BeatPlayer();
         }
 
-        public void ReactOnWeapon(Weapon weapon)
+        public void ReactOnWeapon(Weapon.Weapon weapon)
         {
-            BlockedSteps += weapon.Force;
+            BlockedSteps = weapon.Force;
             IsFrozen = weapon.IsFrozen;
         }
 

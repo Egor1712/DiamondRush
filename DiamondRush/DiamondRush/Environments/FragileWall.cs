@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace DiamondRush
+namespace DiamondRush.Environments
 {
     public class FragileWall : IEnvironment
     {
@@ -17,7 +17,7 @@ namespace DiamondRush
         {
         }
 
-        public void ReactOnWeapon(Weapon weapon, GameState gameState)
+        public void ReactOnWeapon(Weapon.Weapon weapon, GameState gameState)
         {
             gameState.RemoveEnvironment(this);   
         }

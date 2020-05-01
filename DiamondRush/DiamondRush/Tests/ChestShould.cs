@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using DiamondRush.Environments;
 using NUnit.Framework;
 
 namespace DiamondRush.Tests

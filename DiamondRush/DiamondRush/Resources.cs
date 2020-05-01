@@ -2,6 +2,9 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using DiamondRush.Creatures;
+using DiamondRush.Environments;
+using DiamondRush.Weapon;
 
 namespace DiamondRush
 {
@@ -85,6 +88,12 @@ namespace DiamondRush
             {
                 case 'S' :
                     return new SimpleSnake(location,direction); 
+                case 'M' :
+                    return new Monkey(location, direction);
+                case 'R':
+                    return new RedSnake(location, direction);
+                case 'A' :
+                    return new Archer(location, direction);
             }
 
             return null;

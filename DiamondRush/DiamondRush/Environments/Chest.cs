@@ -1,15 +1,15 @@
 ﻿using System.Drawing;
 
-namespace DiamondRush
+namespace DiamondRush.Environments
 {
     public class Chest : IEnvironment
     {
         public string ImageName => IsOpened ? "ChestOpen" : "ChestClose";
         public Point Location { get; set; }
         public bool IsOpened { get; private set; }
-        public  Weapon Weapon { get; }
+        public  Weapon.Weapon Weapon { get; }
         
-        public Chest(Weapon weapon, Point location)
+        public Chest(Weapon.Weapon weapon, Point location)
         {
             Weapon = weapon;
             Location = location;
@@ -29,7 +29,7 @@ namespace DiamondRush
         {
         }
 
-        public void ReactOnWeapon(Weapon weapon, GameState gameState)
+        public void ReactOnWeapon(Weapon.Weapon weapon, GameState gameState)
         {
         }
     }

@@ -1,7 +1,4 @@
-﻿using System.Drawing;
-using static DiamondRush.Resources;
-
-namespace DiamondRush
+﻿namespace DiamondRush.Weapon
 {
     public class Hammer : Weapon
     {

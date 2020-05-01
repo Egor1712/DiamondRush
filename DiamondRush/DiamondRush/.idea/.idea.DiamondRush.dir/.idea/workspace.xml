@@ -12,8 +12,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Tests/SimpleSnakeShould.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Creatures/Arrow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/947CFA9E-93C5-4D21-8EE6-CD975672A1F8/cb/e28060cc/Dictionary`2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Creatures/Archer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Creatures/MoveLogic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/526E29B5-C0FA-4E54-A4E0-5B4A65E04EE8/5/Point.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tests/MonkeyShould.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Creatures/RedSnake.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Creatures/Monkey.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/IDrawable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Environments/Stone.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Environments/Wall.cs" root0="FORCE_HIGHLIGHTING" />
@@ -41,6 +48,7 @@
     <setting file="file://$PROJECT_DIR$/MyForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/04FF2274-FFE3-42EA-B15A-BE272D0A6B6E/3A/Control.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tests/RedSnakeShould.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Environments/FragileWall.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -62,7 +70,6 @@
         <option value="$PROJECT_DIR$/Tests/FoliageShould.cs" />
         <option value="$PROJECT_DIR$/Tests/SimplleSnakeShould.cs" />
         <option value="$PROJECT_DIR$/IWeapon.cs" />
-        <option value="$PROJECT_DIR$/Creatures/ICreature.cs" />
         <option value="$PROJECT_DIR$/Environments/IEnvironment.cs" />
         <option value="$PROJECT_DIR$/Environments/wall.cs" />
         <option value="$PROJECT_DIR$/Environments/FrozenDiamond.cs" />
@@ -75,8 +82,6 @@
         <option value="$PROJECT_DIR$/Tests/ChestShould.cs" />
         <option value="$PROJECT_DIR$/Tests/StoneShould.cs" />
         <option value="$PROJECT_DIR$/Program.cs" />
-        <option value="$PROJECT_DIR$/GameState.cs" />
-        <option value="$PROJECT_DIR$/Creatures/SimpleSnake.cs" />
         <option value="$PROJECT_DIR$/Tests/HammerShould.cs" />
         <option value="$PROJECT_DIR$/Creatures/WeaponsForm.Designer.cs" />
         <option value="$PROJECT_DIR$/WeaponChooseForm.Designer.cs" />
@@ -87,8 +92,19 @@
         <option value="$PROJECT_DIR$/Player.cs" />
         <option value="$PROJECT_DIR$/Weapon/IWeapon.cs" />
         <option value="$PROJECT_DIR$/Environments/FragileWall.cs" />
-        <option value="$PROJECT_DIR$/Resources.cs" />
         <option value="$PROJECT_DIR$/MyForm.cs" />
+        <option value="$PROJECT_DIR$/Creatures/SimpleSnake.cs" />
+        <option value="$PROJECT_DIR$/Tests/SimpleSnakeShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/MonkeyShould.cs" />
+        <option value="$PROJECT_DIR$/Creatures/Monkey.cs" />
+        <option value="$PROJECT_DIR$/Creatures/RedSnake.cs" />
+        <option value="$PROJECT_DIR$/Creatures/MoveLogic.cs" />
+        <option value="$PROJECT_DIR$/Resources.cs" />
+        <option value="$PROJECT_DIR$/Creatures/ICreature.cs" />
+        <option value="$PROJECT_DIR$/GameState.cs" />
+        <option value="$PROJECT_DIR$/Creatures/Archer.cs" />
+        <option value="$PROJECT_DIR$/Creatures/Arrow.cs" />
+        <option value="$PROJECT_DIR$/Tests/RedSnakeShould.cs" />
       </list>
     </option>
   </component>
@@ -113,7 +129,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected=".NET Project.Default">
+  <component name="RunManager">
     <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/bin/Debug/netcoreapp3.0/DiamondRush.dll" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -152,7 +168,8 @@
       <workItem from="1588155509336" duration="7326000" />
       <workItem from="1588222154768" duration="2242000" />
       <workItem from="1588225609216" duration="2407000" />
-      <workItem from="1588228477671" duration="18131000" />
+      <workItem from="1588228477671" duration="18805000" />
+      <workItem from="1588308054510" duration="11947000" />
     </task>
     <servers />
   </component>
@@ -184,19 +201,6 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tests/CheckPointShould.cs</url>
-          <line>19</line>
-          <properties documentPath="$PROJECT_DIR$/Tests/CheckPointShould.cs" initialLine="19">
-            <startOffsets>
-              <option value="725" />
-            </startOffsets>
-            <endOffsets>
-              <option value="749" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

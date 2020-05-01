@@ -14,7 +14,6 @@
 
     <ItemGroup>
       <Compile Remove="Tests\SimplleSnakeShould.cs" />
-      <AdditionalFiles Include="Tests\SimplleSnakeShould.cs" />
       <Compile Remove="Tests\FoliageShould.cs" />
       <AdditionalFiles Include="Tests\FoliageShould.cs" />
     </ItemGroup>

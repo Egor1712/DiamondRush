@@ -1,4 +1,6 @@
 ﻿using System.Drawing;
+using DiamondRush.Creatures;
+using DiamondRush.Weapon;
 using NUnit.Framework;
 
 namespace DiamondRush.Tests

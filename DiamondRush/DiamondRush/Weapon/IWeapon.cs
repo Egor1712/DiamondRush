@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using static DiamondRush.Resources;
 
-namespace DiamondRush
+namespace DiamondRush.Weapon
 {
     public abstract class Weapon
     {

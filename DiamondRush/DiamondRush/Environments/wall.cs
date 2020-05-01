@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace DiamondRush
+namespace DiamondRush.Environments
 {
     public class Wall : IEnvironment
     {
@@ -16,7 +16,7 @@ namespace DiamondRush
 
         }
 
-        public void ReactOnWeapon(Weapon weapon, GameState gameState)
+        public void ReactOnWeapon(Weapon.Weapon weapon, GameState gameState)
         {
         }
     }

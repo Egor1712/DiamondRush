@@ -12,8 +12,8 @@ namespace DiamondRush
         public int Health { get; private set; }
         public int Score { get; private set; }
         private Point LastCheckPoint { get;  set; }
-        public Weapon CurrentWeapon { get; private set; }
-        private readonly List<Weapon> weapons = new List<Weapon>();
+        public Weapon.Weapon CurrentWeapon { get; private set; }
+        private readonly List<Weapon.Weapon> weapons = new List<Weapon.Weapon>();
         public string ImageName => $"Player{Direction}";
 
         public Player(Point location, Direction direction, int health = 3)
@@ -23,7 +23,7 @@ namespace DiamondRush
             Health = health;
         }
 
-        public void AddWeapon(Weapon weapon)
+        public void AddWeapon(Weapon.Weapon weapon)
         {
             weapons.Add(weapon);
             CurrentWeapon = weapon;
@@ -69,9 +69,9 @@ namespace DiamondRush
             }
         }
 
-        public IEnumerable<Weapon> EnumerateAllWeapons() => weapons;
+        public IEnumerable<Weapon.Weapon> EnumerateAllWeapons() => weapons;
 
-        public void ChangeWeapon(Weapon weapon) => CurrentWeapon = weapon;
+        public void ChangeWeapon(Weapon.Weapon weapon) => CurrentWeapon = weapon;
         public void UseWeapon(GameState gameState)
         {
             CurrentWeapon?.DoWork(gameState, Direction);

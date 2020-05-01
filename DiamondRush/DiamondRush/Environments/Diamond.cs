@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using static DiamondRush.Resources;
 
-namespace DiamondRush
+namespace DiamondRush.Environments
 {
     public class Diamond : IEnvironment
     {
@@ -34,7 +34,7 @@ namespace DiamondRush
             }
         }
 
-        public void ReactOnWeapon(Weapon weapon,  GameState gameState)
+        public void ReactOnWeapon(Weapon.Weapon weapon,  GameState gameState)
         {
         }
     }

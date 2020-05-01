@@ -10,7 +10,12 @@
     <e p="C:\Users\Егор\Desktop\DiamondRush\DiamondRush\DiamondRush\DiamondRush" t="IncludeRecursive">
       <e p="bin" t="ExcludeRecursive" />
       <e p="Creatures" t="Include">
+        <e p="Archer.cs" t="Include" />
+        <e p="Arrow.cs" t="Include" />
         <e p="ICreature.cs" t="Include" />
+        <e p="Monkey.cs" t="Include" />
+        <e p="MoveLogic.cs" t="Include" />
+        <e p="RedSnake.cs" t="Include" />
         <e p="SimpleSnake.cs" t="Include" />
       </e>
       <e p="DiamondRush.csproj" t="IncludeRecursive" />
@@ -45,6 +50,7 @@
         <e p="ChestShould.cs" t="Include" />
         <e p="FoliageShould.cs" t="Include" />
         <e p="HammerShould.cs" t="Include" />
+        <e p="MonkeyShould.cs" t="Include" />
         <e p="SimpleSnakeShould.cs" t="Include" />
         <e p="StoneShould.cs" t="Include" />
         <e p="WallShould.cs" t="Include" />

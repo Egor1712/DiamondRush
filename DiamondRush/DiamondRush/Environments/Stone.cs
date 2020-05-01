@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using static DiamondRush.Resources;
 
-namespace DiamondRush
+namespace DiamondRush.Environments
 {
     public class Stone : IEnvironment
     {
@@ -62,7 +62,7 @@ namespace DiamondRush
             FallHeight = 0;
         }
 
-        public void ReactOnWeapon(Weapon weapon,  GameState gameState)
+        public void ReactOnWeapon(Weapon.Weapon weapon,  GameState gameState)
         {
         }
 

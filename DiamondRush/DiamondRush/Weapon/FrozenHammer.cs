@@ -1,4 +1,4 @@
-﻿namespace DiamondRush
+﻿namespace DiamondRush.Weapon
 {
     public class FrozenHammer : Weapon
     {
