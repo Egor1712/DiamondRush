@@ -5,7 +5,12 @@ namespace DiamondRush.Environments
     public class Wall : IEnvironment
     {
         public string ImageName => "Wall";
-        public Point Location { get; set; }
+        public Point Location { get; }
+
+        public Wall(Point location)
+        {
+            Location = location;
+        }
 
         public void CollapseWithPlayer(GameState gameState, Player player)
         {
@@ -13,7 +18,6 @@ namespace DiamondRush.Environments
 
         public void Move(GameState gameState)
         {
-
         }
 
         public void ReactOnWeapon(Weapon.Weapon weapon, GameState gameState)

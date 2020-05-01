@@ -5,13 +5,13 @@ namespace DiamondRush.Creatures
 {
     public class SimpleSnake : ICreature
     {
-        public Point Location { get; set; }
+        public Point Location { get; private set; }
         public string ImageName => $"Snake{Direction}";
-        public Direction Direction { get; set; }
+        public Direction Direction { get; private set; }
         public int BlockedSteps { get; private set; }
         public bool IsFrozen { get; private set; }
-        
-        
+
+
         public SimpleSnake(Point startLocation, Direction startDirection)
         {
             Location = startLocation;
@@ -34,15 +34,15 @@ namespace DiamondRush.Creatures
         {
             if (BlockedSteps > 0)
             {
-                BlockedSteps --;
+                BlockedSteps--;
                 return;
             }
 
             IsFrozen = false;
-            
+
             var nextPoint = new Point(Location.X + DirectionToPoints[Direction].X,
                 Location.Y + DirectionToPoints[Direction].Y);
-            if (gameState.InBounds(nextPoint.X,nextPoint.Y))
+            if (gameState.InBounds(nextPoint))
             {
                 if (nextPoint.Equals(gameState.Player.Location))
                 {
@@ -51,19 +51,20 @@ namespace DiamondRush.Creatures
                     gameState.Player.BeatPlayer();
                     return;
                 }
-                (var environment, var creature) = gameState[nextPoint.Y,nextPoint.X];
+
+                (var environment, var creature) = gameState[nextPoint];
                 if (creature != null || environment != null)
                 {
                     Direction = OppositeDirection[Direction];
                     return;
                 }
+
                 gameState.MoveCreature(Location, nextPoint);
                 Location = nextPoint;
                 return;
             }
-            
+
             Direction = OppositeDirection[Direction];
         }
-
     }
 }

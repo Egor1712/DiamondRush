@@ -5,15 +5,10 @@ namespace DiamondRush.Environments
 {
     public class Foliage : IEnvironment
     {
-        public int Priority { get; set; }
-        public bool IsDisappearInConflict(ICreature creature) => true;
-        public Point Location { get; set; }
-        public string ImageName { get; }
+        public Point Location { get; }
+        public string ImageName => "Foliage";
 
-        public Foliage()
-        {
-            ImageName = "Foliage";
-        }
+        public Foliage(Point location) => Location = location;
 
         public void CollapseWithPlayer(GameState gameState, Player player)
         {
@@ -25,7 +20,7 @@ namespace DiamondRush.Environments
         {
         }
 
-        public void ReactOnWeapon(Weapon.Weapon weapon,  GameState gameState)
+        public void ReactOnWeapon(Weapon.Weapon weapon, GameState gameState)
         {
             gameState.RemoveEnvironment(this);
         }

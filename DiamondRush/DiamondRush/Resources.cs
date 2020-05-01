@@ -64,13 +64,13 @@ namespace DiamondRush
                 case 'S':
                     return new Stone{Location = location};
                 case 'F':
-                    return new Foliage{Location = location};
+                    return new Foliage(location);
                 case 'D' :
-                    return new Diamond {Location = location};
+                    return new Diamond(location);
                 case 'C':
-                    return new CheckPoint {Location = location};
+                    return new CheckPoint(location);
                 case 'W' :
-                    return new Wall {Location = location};
+                    return new Wall(location);
                 case 'H' :
                     return new Chest(new Hammer(), location);
                 case 'R':

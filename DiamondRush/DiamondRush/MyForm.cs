@@ -7,9 +7,9 @@ namespace DiamondRush
 {
     public partial class MyForm : Form
     {
-        public GameState GameState;
-        public Timer Timer;
-        private FlowLayoutPanel layout = new FlowLayoutPanel();
+        private readonly GameState gameState;
+        private readonly Timer timer;
+        private readonly FlowLayoutPanel layout = new FlowLayoutPanel();
 
         public MyForm()
         {
@@ -17,19 +17,19 @@ namespace DiamondRush
             CreateAllImages();
             WindowState = FormWindowState.Maximized;
             var size = Screen.GetBounds(Location);
-            GameState = new GameState(size.Width / 45, size.Height / 45 - 1,
+            gameState = new GameState(size.Width / 45, size.Height / 45 - 1,
                 new Player(new Point(5, 5), Direction.Right));
-            Timer = new Timer
+            timer = new Timer
             {
                 Interval = 80
             };
 
-            GameState.ParseEnvironment(MapOfEnvironment);
-            GameState.ParseCreatures(MapOfCreatures);
-            Paint += (sender, args) => GameState.Draw(args.Graphics);
-            Timer.Tick += (sender, args) => GameState.UpdateState();
-            Timer.Tick += (sender, args) => Invalidate();
-            Timer.Start();
+            gameState.ParseEnvironment(MapOfEnvironment);
+            gameState.ParseCreatures(MapOfCreatures);
+            Paint += (sender, args) => gameState.Draw(args.Graphics);
+            timer.Tick += (sender, args) => gameState.UpdateState();
+            timer.Tick += (sender, args) => Invalidate();
+            timer.Start();
             layout.Location = new Point(Bounds.Bottom, Bounds.Left);
             SetLayout();
             InitializeComponent();
@@ -39,25 +39,26 @@ namespace DiamondRush
         {
             var label = new LinkLabel();
             label.Text = "CurrentWeapon";
-            if (GameState.Player.CurrentWeapon != null)
-                label.Image = Images[GameState.Player.CurrentWeapon.ImageName];
+            if (gameState.Player.CurrentWeapon != null)
+                label.Image = Images[gameState.Player.CurrentWeapon.ImageName];
             layout.Controls.Add(label);
         }
 
         protected override void OnKeyDown(KeyEventArgs e)
         {
             base.OnKeyDown(e);
-            
+
             if (e.KeyCode == Keys.E)
             {
-                GameState.Player.UseWeapon(GameState);
+                gameState.Player.UseWeapon(gameState);
                 return;
             }
+
             var direction = KeysToDirection[e.KeyCode];
-            GameState.Player.ChangeDirection(direction);
-            GameState.Player.Move(GameState, direction);
+            gameState.Player.ChangeDirection(direction);
+            gameState.Player.Move(gameState, direction);
         }
-        
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);

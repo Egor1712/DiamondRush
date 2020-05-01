@@ -1,24 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Security.Policy;
-using System.Windows.Forms;
 using DiamondRush.Creatures;
 using DiamondRush.Environments;
-using static System.ValueTuple;
 using static DiamondRush.Resources;
 
 namespace DiamondRush
 {
     public class GameState
     {
-        public static int Coefficient = 15;
-        public int Width { get; }
-        public int Height { get; }
+        private static int Coefficient = 45;
+        private int Width { get; }
+        private int Height { get; }
         private readonly IEnvironment[,] environments;
         private readonly ICreature[,] creatures;
-        private readonly HashSet<IEnvironment> environmentsHS;
-        private readonly HashSet<ICreature> creaturesHS;
+        private readonly HashSet<IEnvironment> environmentsHs = new HashSet<IEnvironment>();
+        private readonly HashSet<ICreature> creaturesHs = new HashSet<ICreature>();
         private readonly List<ICreature> creaturesToRemove = new List<ICreature>();
         private readonly List<ICreature> creaturesToAdd = new List<ICreature>();
         public Player Player { get; }
@@ -30,8 +26,6 @@ namespace DiamondRush
             Player = player;
             environments = new IEnvironment[Height, Width];
             creatures = new ICreature[Height, Width];
-            environmentsHS = new HashSet<IEnvironment>();
-            creaturesHS = new HashSet<ICreature>();
         }
 
         public void ParseEnvironment(string mapOfEnvironments)
@@ -47,7 +41,7 @@ namespace DiamondRush
                     if (j >= row.Length) continue;
                     environments[i,j] = CharToEnvironment(row[j], new Point(j,i));
                     if ( environments[i,j] != null)
-                        environmentsHS.Add(environments[i, j]);
+                        environmentsHs.Add(environments[i, j]);
                 }
             }
         }
@@ -65,38 +59,38 @@ namespace DiamondRush
                     if (j >= row.Length) continue;
                     creatures[i,j] = CharToCreature(row[j], new Point(j,i));
                     if ( creatures[i,j] != null)
-                        creaturesHS.Add(creatures[i, j]);
+                        creaturesHs.Add(creatures[i, j]);
                 }
             }
         }
-
-
+        
         public (IEnvironment Enviroment, ICreature Creature) this[Point point] =>
-            (environments[point.X, point.Y], creatures[point.X, point.Y]);
+            (environments[point.Y, point.X], creatures[point.Y, point.X]);
+        
         public (IEnvironment Enviroment, ICreature Creature) this[int x, int y] =>
             (environments[x, y], creatures[x,y]);
 
         public void UpdateState()
         {
-            foreach (var environment in environmentsHS)
+            foreach (var environment in environmentsHs)
             {
                 environment.Move(this);   
             }
 
-            foreach (var creature in creaturesHS)
+            foreach (var creature in creaturesHs)
             {
                 creature.Move(this);
             }
 
             foreach (var creature in creaturesToRemove)
             {
-                creaturesHS.Remove(creature);
+                creaturesHs.Remove(creature);
                 creatures[creature.Location.Y, creature.Location.X] = null;
             }
             creaturesToRemove.Clear();
             foreach (var creature in creaturesToAdd)
             {
-                creaturesHS.Add(creature);
+                creaturesHs.Add(creature);
             }
             creaturesToAdd.Clear();
         }
@@ -104,8 +98,7 @@ namespace DiamondRush
         public bool InBounds(Point point)
             => point.X >= 0 && point.X < Width && point.Y >= 0 && point.Y < Height;
 
-        public bool InBounds(int x, int y)
-            => x >= 0 && x < Width && y >= 0 && y < Height;
+        
 
         public void MoveCreature(Point oldLocation, Point newLocation)
         {
@@ -123,30 +116,25 @@ namespace DiamondRush
         public void AddCreature(ICreature creature) => creaturesToAdd.Add(creature);
         public void RemoveEnvironment(IEnvironment environment)
         {
-            environmentsHS.Remove(environment);
+            environmentsHs.Remove(environment);
             environments[environment.Location.Y, environment.Location.X] = null;
         }
 
-        public void RemoveCreature(ICreature creature)
-        {
-           creaturesToRemove.Add(creature);
-        }
+        public void RemoveCreature(ICreature creature) => creaturesToRemove.Add(creature);
 
         public void Draw(Graphics graphics)
         {
-
-            foreach (var creature in creaturesHS)
-            {
+            foreach (var creature in creaturesHs)
                 graphics.DrawImage(Images[creature.ImageName],
-                    new Point(creature.Location.X*45, creature.Location.Y*45));
-            }
+                    new Point(creature.Location.X*Coefficient, creature.Location.Y*Coefficient));
+            
+            foreach (var environment in environmentsHs)
 
-            foreach (var environment in environmentsHS)
-            {
                 graphics.DrawImage(Images[environment.ImageName],
-                    new Point(environment.Location.X*45, environment.Location.Y*45));
-            }
-            graphics.DrawImage(Images[Player.ImageName], new Point(45 * Player.Location.X, 45 * Player.Location.Y));
+                    new Point(environment.Location.X*Coefficient, environment.Location.Y*Coefficient));
+            
+            graphics.DrawImage(Images[Player.ImageName],
+                new Point(Coefficient * Player.Location.X, Coefficient * Player.Location.Y));
         }
     }
 }

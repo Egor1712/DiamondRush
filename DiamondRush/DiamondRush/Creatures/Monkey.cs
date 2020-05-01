@@ -6,8 +6,8 @@ namespace DiamondRush.Creatures
     public class Monkey : ICreature
     {
         public string ImageName => "Monkey";
-        public Point Location { get; set; }
-        public Direction Direction { get; set; }
+        public Point Location { get; private set; }
+        public Direction Direction { get; private set; }
         public int BlockedSteps { get; private set; }
         public bool IsFrozen { get; private set; }
 

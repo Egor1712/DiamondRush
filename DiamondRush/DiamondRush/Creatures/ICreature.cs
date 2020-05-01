@@ -4,8 +4,8 @@ namespace DiamondRush.Creatures
 {
     public interface ICreature : IDrawable
     {
-        Point Location { get; set; }
-        Direction Direction { get; set; }
+        Point Location { get; }
+        Direction Direction { get; }
         int BlockedSteps { get; }
         bool IsFrozen { get; }
         void Move(GameState gameState);

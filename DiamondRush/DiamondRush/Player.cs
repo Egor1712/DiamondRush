@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Windows.Forms;
 using static DiamondRush.Resources;
 
 namespace DiamondRush
@@ -52,7 +51,7 @@ namespace DiamondRush
                 Location.Y + DirectionToPoints[direction].Y);
             if (gameState.InBounds(nextPoint))
             {
-                (var environment, var creature) = gameState[nextPoint.Y,nextPoint.X];
+                (var environment, var creature) = gameState[nextPoint];
                 if (environment == null)
                 {
                     if (creature != null)

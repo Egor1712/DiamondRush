@@ -6,8 +6,8 @@ namespace DiamondRush.Creatures
     public class Arrow : ICreature
     {
         public string ImageName => $"Arrow";
-        public Point Location { get; set; }
-        public Direction Direction { get; set; }
+        public Point Location { get; private set; }
+        public Direction Direction { get; }
         public int BlockedSteps => 0;
         public bool IsFrozen => false;
 
@@ -26,13 +26,15 @@ namespace DiamondRush.Creatures
                 gameState.RemoveCreature(this);
                 return;
             }
+
             if (gameState.Player.Location == nextPoint)
             {
                 gameState.Player.BeatPlayer();
                 gameState.RemoveCreature(this);
                 return;
             }
-            (var environment, var creature) = gameState[nextPoint.Y, nextPoint.X];
+
+            (var environment, var creature) = gameState[nextPoint];
             if (environment != null)
                 gameState.RemoveCreature(this);
             if (creature != null)

@@ -52,7 +52,6 @@ namespace DiamondRush.Tests
             gameState.ParseCreatures("\n\nS");
             var stone = gameState[0, 0].Enviroment;
             var snake = gameState[2, 0].Creature;
-            snake.Direction = Direction.Right;
             Assert.AreEqual(new Point(0,0) ,stone.Location );
             Assert.AreEqual(new Point(0,2), snake.Location );
             gameState.UpdateState();

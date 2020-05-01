@@ -5,10 +5,10 @@ namespace DiamondRush.Environments
     public class Chest : IEnvironment
     {
         public string ImageName => IsOpened ? "ChestOpen" : "ChestClose";
-        public Point Location { get; set; }
+        public Point Location { get; }
         public bool IsOpened { get; private set; }
-        public  Weapon.Weapon Weapon { get; }
-        
+        public Weapon.Weapon Weapon { get; }
+
         public Chest(Weapon.Weapon weapon, Point location)
         {
             Weapon = weapon;
@@ -22,6 +22,7 @@ namespace DiamondRush.Environments
                 player.AddWeapon(Weapon);
                 IsOpened = true;
             }
+
             player.Location = Location;
         }
 

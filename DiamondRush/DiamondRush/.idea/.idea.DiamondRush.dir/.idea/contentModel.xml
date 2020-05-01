@@ -46,11 +46,13 @@
       <e p="Program.cs" t="Include" />
       <e p="Resources.cs" t="Include" />
       <e p="Tests" t="Include">
+        <e p="ArcherShould.cs" t="Include" />
         <e p="CheckPointShould.cs" t="Include" />
         <e p="ChestShould.cs" t="Include" />
         <e p="FoliageShould.cs" t="Include" />
         <e p="HammerShould.cs" t="Include" />
         <e p="MonkeyShould.cs" t="Include" />
+        <e p="RedSnakeShould.cs" t="Include" />
         <e p="SimpleSnakeShould.cs" t="Include" />
         <e p="StoneShould.cs" t="Include" />
         <e p="WallShould.cs" t="Include" />

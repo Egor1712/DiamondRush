@@ -5,7 +5,9 @@ namespace DiamondRush.Environments
     public class CheckPoint : IEnvironment
     {
         public string ImageName => "CheckPoint";
-        public Point Location { get; set; }
+        public Point Location { get; }
+
+        public CheckPoint(Point location) => Location = location;
 
         public void CollapseWithPlayer(GameState gameState, Player player)
         {
@@ -21,7 +23,7 @@ namespace DiamondRush.Environments
             }
         }
 
-        public void ReactOnWeapon(Weapon.Weapon weapon,  GameState gameState)
+        public void ReactOnWeapon(Weapon.Weapon weapon, GameState gameState)
         {
         }
     }
