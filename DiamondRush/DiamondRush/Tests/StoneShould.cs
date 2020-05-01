@@ -10,7 +10,7 @@ namespace DiamondRush.Tests
         public void StoneShouldFall()
         {
             var gameState = new GameState(1,2,new Player(new Point(-1,-1), Direction.Down ));
-            gameState.ParseEnvironment(@"S");
+            gameState.ParseAllGameState(@"S","");
             var stone = gameState[0, 0].Enviroment;
             Assert.AreEqual(new Point(0,0),  stone.Location);
             gameState.UpdateState();
@@ -22,7 +22,7 @@ namespace DiamondRush.Tests
         public void StoneShouldNotFallIntoPlayer()
         {
             var gameState = new GameState(1,2,new Player(new Point(0,1), Direction.Left ));
-            gameState.ParseEnvironment(@"S");
+            gameState.ParseAllGameState(@"S", "");
             var stone = gameState[0, 0].Enviroment;
             Assert.AreEqual(new Point(0,0), stone.Location);
             gameState.UpdateState();
@@ -34,7 +34,7 @@ namespace DiamondRush.Tests
         public void StoneShouldBeatPlayer()
         {
             var gameState = new GameState(1,3,new Player(new Point(0,2), Direction.Down ));
-            gameState.ParseEnvironment(@"S");
+            gameState.ParseAllGameState(@"S", "");
             var stone = gameState[0, 0].Enviroment;
             Assert.AreEqual(new Point(0,0), stone.Location );
             gameState.UpdateState();
@@ -48,8 +48,7 @@ namespace DiamondRush.Tests
         public void StoneShouldKillSnake()
         {
             var gameState = new GameState(1,3,new Player(new Point(-1,-1), Direction.Down ));
-            gameState.ParseEnvironment(@"S");
-            gameState.ParseCreatures("\n\nS");
+            gameState.ParseAllGameState(@"S", "\n\nS");
             var stone = gameState[0, 0].Enviroment;
             var snake = gameState[2, 0].Creature;
             Assert.AreEqual(new Point(0,0) ,stone.Location );
@@ -66,9 +65,7 @@ namespace DiamondRush.Tests
         public void StoneShouldNotCollapseWithAnotherStone()
         {
             var gameState = new GameState(1,3, new Player(new Point(-1,-1), Direction.Down ));
-            gameState.ParseEnvironment(@"S
-
-S");
+            gameState.ParseAllGameState("S\n\nS", "");
             var firstStone = gameState[0, 0].Enviroment;
             var secondStone = gameState[2, 0].Enviroment;
             Assert.AreEqual(new Point(0,0),firstStone.Location );

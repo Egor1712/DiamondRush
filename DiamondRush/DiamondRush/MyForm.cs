@@ -18,14 +18,13 @@ namespace DiamondRush
             WindowState = FormWindowState.Maximized;
             var size = Screen.GetBounds(Location);
             gameState = new GameState(size.Width / 45, size.Height / 45 - 1,
-                new Player(new Point(5, 5), Direction.Right));
+                new Player(new Point(2, 0), Direction.Right,100));
             timer = new Timer
             {
                 Interval = 80
             };
 
-            gameState.ParseEnvironment(MapOfEnvironment);
-            gameState.ParseCreatures(MapOfCreatures);
+            gameState.ParseAllGameState(MapOfEnvironment,MapOfCreatures);
             Paint += (sender, args) => gameState.Draw(args.Graphics);
             timer.Tick += (sender, args) => gameState.UpdateState();
             timer.Tick += (sender, args) => Invalidate();

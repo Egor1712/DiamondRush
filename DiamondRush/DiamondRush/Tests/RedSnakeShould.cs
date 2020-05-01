@@ -11,7 +11,7 @@ namespace DiamondRush.Tests
         public void RedSnakeShouldBeatPlayer()
         {
             var gameState = new GameState(1,2, new Player(new Point(0,1), Direction.Down, 2));
-            gameState.ParseCreatures("R");
+            gameState.ParseAllGameState("","R");
             var monkey = gameState[0, 0].Creature;
             Assert.IsNotNull(monkey);
             Assert.AreEqual(new Point(0,0),monkey.Location );
@@ -24,15 +24,14 @@ namespace DiamondRush.Tests
         public void RedSnakeShouldDieByStone()
         {
             var gameState = new GameState(1,3, new Player(new Point(-5,-5), Direction.Down, 2));
-            gameState.ParseCreatures("\n\nR");
-            gameState.ParseEnvironment("S");
-            var monkey = gameState[0, 2].Creature;
+            gameState.ParseAllGameState("S","\n\nR");
+            var monkey = gameState[2, 0].Creature;
             var stone = gameState[0, 0].Enviroment;
             Assert.IsNotNull(monkey);
             gameState.UpdateState();
             gameState.UpdateState();
             Assert.AreEqual(new Point(0,2),stone.Location);
-            Assert.IsNull(gameState[0,2].Creature);
+            Assert.IsNull(gameState[2,0].Creature);
         }
 
         [Test]
@@ -40,7 +39,7 @@ namespace DiamondRush.Tests
         {
             var player = new Player(new Point(0, 1), Direction.Up);
             var gameState = new GameState(1,2, player);
-            gameState.ParseCreatures("M");
+            gameState.ParseAllGameState("","M");
             var monkey = gameState[0, 0].Creature;
             Assert.IsNotNull(monkey);
             player.AddWeapon(new Hammer());
@@ -53,7 +52,7 @@ namespace DiamondRush.Tests
         public void RedSnakeShouldSeePlayerBy10Cells()
         {
             var gameState = new GameState(1,10,new Player(new Point(0,9),Direction.Down));
-            gameState.ParseCreatures("R");
+            gameState.ParseAllGameState("","R");
             var redSnake = gameState[0, 0].Creature;
             Assert.IsNotNull(redSnake);
             for (var i = 1; i < 10; i++)

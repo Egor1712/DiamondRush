@@ -34,14 +34,6 @@ namespace DiamondRush
             [Keys.S] = Direction.Down
         };
         
-        public static readonly Dictionary<char, Direction> CharToDirection =  new Dictionary<char, Direction>
-        {
-            ['w'] = Direction.Up,
-            ['d'] = Direction.Right,
-            ['a'] = Direction.Left,
-            ['s'] = Direction.Down
-        };
-        
         public static readonly Dictionary<string, Image> Images = new Dictionary<string, Image>();
         public static string MapOfEnvironment;
         public static string MapOfCreatures;

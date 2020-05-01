@@ -31,7 +31,6 @@
     <setting file="file://$PROJECT_DIR$/Tests/StoneShould.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Environments/CheckPoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Weapon/Hammer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tests/FoliageShould.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Creatures/ICreature.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Creatures/SimpleSnake.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Weapon/IWeapon.cs" root0="FORCE_HIGHLIGHTING" />
@@ -45,8 +44,11 @@
     <setting file="file://$PROJECT_DIR$/Tests/ChestShould.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tests/CheckPointShould.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Form1.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tests/FoliageShould.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MyForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/nunit/nunit/c933a883ea25263ec575a654dae69fa38000edd9/src/NUnitFramework/framework/Internal/Execution/SimpleWorkItemDispatcher.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/nunit/nunit/c933a883ea25263ec575a654dae69fa38000edd9/src/NUnitFramework/framework/Internal/Execution/CompositeWorkItem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/04FF2274-FFE3-42EA-B15A-BE272D0A6B6E/3A/Control.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tests/RedSnakeShould.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Environments/FragileWall.cs" root0="FORCE_HIGHLIGHTING" />
@@ -55,7 +57,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Foliage.cs" />
         <option value="$PROJECT_DIR$/IEnvironment.cs" />
         <option value="$PROJECT_DIR$/CheckPoint.cs" />
         <option value="$PROJECT_DIR$/Stone.cs" />
@@ -66,26 +67,15 @@
         <option value="$PROJECT_DIR$/FoliageShould.cs" />
         <option value="$PROJECT_DIR$/SimplleSnakeShould.cs" />
         <option value="$PROJECT_DIR$/wall.cs" />
-        <option value="$PROJECT_DIR$/Tests/FoliageShould.cs" />
         <option value="$PROJECT_DIR$/Tests/SimplleSnakeShould.cs" />
         <option value="$PROJECT_DIR$/IWeapon.cs" />
         <option value="$PROJECT_DIR$/Environments/wall.cs" />
         <option value="$PROJECT_DIR$/Environments/FrozenDiamond.cs" />
-        <option value="$PROJECT_DIR$/Tests/WallShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/CheckPointShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/ChestShould.cs" />
-        <option value="$PROJECT_DIR$/Program.cs" />
-        <option value="$PROJECT_DIR$/Tests/HammerShould.cs" />
         <option value="$PROJECT_DIR$/Creatures/WeaponsForm.Designer.cs" />
         <option value="$PROJECT_DIR$/WeaponChooseForm.Designer.cs" />
         <option value="$PROJECT_DIR$/WeaponChooseForm.cs" />
         <option value="$PROJECT_DIR$/Weapon/Hammer.cs" />
         <option value="$PROJECT_DIR$/Weapon/FrozenHammer.cs" />
-        <option value="$PROJECT_DIR$/Tests/RedSnakeShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/MonkeyShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/ArcherShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/StoneShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/SimpleSnakeShould.cs" />
         <option value="$PROJECT_DIR$/Creatures/ICreature.cs" />
         <option value="$PROJECT_DIR$/Creatures/Archer.cs" />
         <option value="$PROJECT_DIR$/Creatures/Monkey.cs" />
@@ -96,16 +86,28 @@
         <option value="$PROJECT_DIR$/Environments/Foliage.cs" />
         <option value="$PROJECT_DIR$/Environments/FragileWall.cs" />
         <option value="$PROJECT_DIR$/Environments/Wall.cs" />
-        <option value="$PROJECT_DIR$/Resources.cs" />
         <option value="$PROJECT_DIR$/Creatures/Arrow.cs" />
         <option value="$PROJECT_DIR$/Creatures/MoveLogic.cs" />
         <option value="$PROJECT_DIR$/Creatures/SimpleSnake.cs" />
         <option value="$PROJECT_DIR$/Weapon/IWeapon.cs" />
         <option value="$PROJECT_DIR$/Environments/Diamond.cs" />
         <option value="$PROJECT_DIR$/Environments/Stone.cs" />
-        <option value="$PROJECT_DIR$/GameState.cs" />
-        <option value="$PROJECT_DIR$/MyForm.cs" />
         <option value="$PROJECT_DIR$/Player.cs" />
+        <option value="$PROJECT_DIR$/Resources.cs" />
+        <option value="$PROJECT_DIR$/Tests/fOLIAGEsHOULD.cs" />
+        <option value="$PROJECT_DIR$/GameState.cs" />
+        <option value="$PROJECT_DIR$/Tests/ArcherShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/CheckPointShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/ChestShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/FoliageShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/HammerShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/MonkeyShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/RedSnakeShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/SimpleSnakeShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/WallShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/StoneShould.cs" />
+        <option value="$PROJECT_DIR$/MyForm.cs" />
+        <option value="$PROJECT_DIR$/Program.cs" />
       </list>
     </option>
   </component>
@@ -130,7 +132,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected=".NET Project.Default">
     <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/bin/Debug/netcoreapp3.0/DiamondRush.dll" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -170,7 +172,8 @@
       <workItem from="1588222154768" duration="2242000" />
       <workItem from="1588225609216" duration="2407000" />
       <workItem from="1588228477671" duration="18805000" />
-      <workItem from="1588308054510" duration="16075000" />
+      <workItem from="1588308054510" duration="16778000" />
+      <workItem from="1588348521401" duration="3269000" />
     </task>
     <servers />
   </component>

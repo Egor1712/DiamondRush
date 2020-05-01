@@ -28,38 +28,27 @@ namespace DiamondRush
             creatures = new ICreature[Height, Width];
         }
 
-        public void ParseEnvironment(string mapOfEnvironments)
+        public void ParseAllGameState(string mapOfEnvironments, string mapOfCreatures)
         {
-            var rows = mapOfEnvironments.Split(new[] {'\n'});
+            var rowsEnv = mapOfEnvironments.Split(new[] {'\n'});
+            var rowsCr = mapOfCreatures.Split(new[] {'\n'});
             for (var i = 0; i < Height; i++)
             {
-                if (i >= rows.Length)
-                    return;
-                var row = rows[i];
                 for (var j = 0; j < Width; j++)
                 {
-                    if (j >= row.Length) continue;
-                    environments[i,j] = CharToEnvironment(row[j], new Point(j,i));
-                    if ( environments[i,j] != null)
-                        environmentsHs.Add(environments[i, j]);
-                }
-            }
-        }
-
-        public void ParseCreatures(string mapOfCreatures)
-        {
-            var rows = mapOfCreatures.Split(new[] {'\n'});
-            for (var i = 0; i < Height; i++)
-            {
-                if (i >= rows.Length)
-                    return;
-                var row = rows[i];
-                for (var j = 0; j < Width; j++)
-                {
-                    if (j >= row.Length) continue;
-                    creatures[i,j] = CharToCreature(row[j], new Point(j,i));
-                    if ( creatures[i,j] != null)
-                        creaturesHs.Add(creatures[i, j]);
+                    if (i < rowsCr.Length && j < rowsCr[i].Length)
+                    {
+                        creatures[i, j] = CharToCreature(rowsCr[i][j], new Point(j, i));
+                        if (creatures[i, j] != null)
+                            creaturesHs.Add(creatures[i, j]);
+                    }
+                    if (i < rowsEnv.Length && j < rowsEnv[i].Length)
+                    {
+                        environments[i, j] = CharToEnvironment(rowsEnv[i][j], new Point(j, i));
+                        if (environments[i, j] != null)
+                            environmentsHs.Add(environments[i, j]);
+                    }
+                    
                 }
             }
         }
@@ -129,7 +118,6 @@ namespace DiamondRush
                     new Point(creature.Location.X*Coefficient, creature.Location.Y*Coefficient));
             
             foreach (var environment in environmentsHs)
-
                 graphics.DrawImage(Images[environment.ImageName],
                     new Point(environment.Location.X*Coefficient, environment.Location.Y*Coefficient));
             

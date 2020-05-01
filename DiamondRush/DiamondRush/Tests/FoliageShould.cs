@@ -10,7 +10,7 @@ namespace DiamondRush.Tests
         public void FoliageShouldNotFall()
         {
             var gameState = new GameState(1,2,null);
-            gameState.ParseEnvironment(@"F");
+            gameState.ParseAllGameState(@"F", "");
             var foliage = gameState[0, 0].Enviroment;
             Assert.AreEqual(new Point(0,0), foliage.Location);
             gameState.UpdateState();
@@ -21,8 +21,7 @@ namespace DiamondRush.Tests
         public void FoliageShouldDisappearAfterPlayerStep()
         {
             var gameState = new GameState(1,2,new Player(new Point(0,0),Direction.Down));
-            gameState.ParseEnvironment(
-                "\nF");
+            gameState.ParseAllGameState("\nF", "");
             var foliage = gameState[1, 0].Enviroment;
             Assert.AreEqual(new Point(0,1),foliage.Location);
             gameState.Player.Move(gameState, Direction.Down);

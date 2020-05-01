@@ -11,7 +11,7 @@ namespace DiamondRush.Tests
         public void ChestShouldNotInteractWithOtherObjects()
         {
             var gameState = new GameState(1,3, new Player(new Point(0,0), Direction.Down));
-            gameState.ParseEnvironment("S\n\nH");
+            gameState.ParseAllGameState("S\n\nH", "");
             var checkPoint = gameState[2, 0].Enviroment;
             var stone = gameState[0, 0].Enviroment;
             Assert.AreEqual(new Point(0,0),stone.Location);
@@ -26,7 +26,7 @@ namespace DiamondRush.Tests
         public void ChestShouldAddWeaponToPlayer()
         {
             var gameState = new GameState(1,3, new Player(new Point(0,1), Direction.Down));
-            gameState.ParseEnvironment("\n\nH");
+            gameState.ParseAllGameState("\n\nH", "");
             var chest = gameState[2, 0].Enviroment as Chest;
             Assert.IsNotNull(chest);
             Assert.AreEqual(new Point(0,2), chest.Location);
