@@ -10,7 +10,8 @@ namespace DiamondRush.Creatures
         bool IsFrozen { get; }
         void Move(GameState gameState);
 
-        void CollapseWithPlayer(GameState gameState, Player player);
+        bool IsCollapseWithPlayer(GameState gameState, Player player);
+        void DoLogicWhenCollapseWithPlayer(GameState gameState);
         void ReactOnWeapon(Weapon.Weapon weapon);
     }
 }

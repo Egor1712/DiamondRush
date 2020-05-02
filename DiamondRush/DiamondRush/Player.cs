@@ -6,7 +6,7 @@ namespace DiamondRush
 {
     public class Player
     {
-        public Point Location { get; set; }
+        public Point Location { get; private set; }
         public Direction Direction { get; private set; }
         public int Health { get; private set; }
         public int Score { get; private set; }
@@ -28,7 +28,7 @@ namespace DiamondRush
             CurrentWeapon = weapon;
         }
 
-        public void ResetPlayer()
+        private void ResetPlayer()
         {
             Location = LastCheckPoint;
             Health = 3;
@@ -49,28 +49,23 @@ namespace DiamondRush
             Direction = direction;
             var nextPoint = new Point(Location.X + DirectionToPoints[direction].X,
                 Location.Y + DirectionToPoints[direction].Y);
-            if (gameState.InBounds(nextPoint))
+            if (!gameState.InBounds(nextPoint)) return;
+            (var environment, var creature) = gameState[nextPoint];
+            if (environment != null && environment.IsCollapseWithPlayer(this, gameState))
             {
-                (var environment, var creature) = gameState[nextPoint];
-                if (environment == null)
-                {
-                    if (creature != null)
-                    {
-                        creature.CollapseWithPlayer(gameState, gameState.Player);
-                        return;
-                    }
-
-                    Location = nextPoint;
-                    return;
-                }
-                if (creature == null)
-                    environment.CollapseWithPlayer(gameState,this);
+                Location = nextPoint;
+                environment.DoLogicWhenCollapseWithPlayer(gameState);
             }
+            if (creature != null && creature.IsCollapseWithPlayer(gameState, this))
+            {
+                Location = nextPoint;
+                creature.DoLogicWhenCollapseWithPlayer(gameState);
+            }
+                
+            if (environment == null && creature == null)
+                Location = nextPoint;
         }
-
-        public IEnumerable<Weapon.Weapon> EnumerateAllWeapons() => weapons;
-
-        public void ChangeWeapon(Weapon.Weapon weapon) => CurrentWeapon = weapon;
+        
         public void UseWeapon(GameState gameState)
         {
             CurrentWeapon?.DoWork(gameState, Direction);

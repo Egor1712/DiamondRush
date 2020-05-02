@@ -18,10 +18,14 @@ namespace DiamondRush.Creatures
             Direction = startDirection;
         }
 
-        public void CollapseWithPlayer(GameState gameState, Player player)
+        public bool IsCollapseWithPlayer(GameState gameState, Player player)
         {
-            player.Location = Location;
-            player.BeatPlayer();
+            return true;
+        }
+
+        public void DoLogicWhenCollapseWithPlayer(GameState gameState)
+        {
+            gameState.Player.BeatPlayer();
         }
 
         public void ReactOnWeapon(Weapon.Weapon weapon)
@@ -46,7 +50,6 @@ namespace DiamondRush.Creatures
             {
                 if (nextPoint.Equals(gameState.Player.Location))
                 {
-                    gameState.MoveCreature(Location, nextPoint);
                     Location = nextPoint;
                     gameState.Player.BeatPlayer();
                     return;
@@ -59,7 +62,6 @@ namespace DiamondRush.Creatures
                     return;
                 }
 
-                gameState.MoveCreature(Location, nextPoint);
                 Location = nextPoint;
                 return;
             }

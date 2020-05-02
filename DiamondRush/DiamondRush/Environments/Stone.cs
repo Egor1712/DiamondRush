@@ -11,17 +11,10 @@ namespace DiamondRush.Environments
         private int fallHeight;
 
 
-        public void CollapseWithPlayer(GameState gameState, Player player)
-        {
-            if ((player.Direction != Direction.Left && player.Direction != Direction.Right) ||
-                !CanMoveToRightOrLeft(player.Direction, gameState)) return;
-            player.Location = Location;
-            gameState.MoveEnvironment(Location,
-                new Point(Location.X + DirectionToPoints[player.Direction].X,
-                    Location.Y + DirectionToPoints[player.Direction].Y));
-            Location = new Point(Location.X + DirectionToPoints[player.Direction].X,
-                Location.Y + DirectionToPoints[player.Direction].Y);
-        }
+        public bool IsCollapseWithPlayer(Player player,  GameState gameState) =>
+             (player.Direction == Direction.Left || player.Direction == Direction.Right)
+             && CanMoveToRightOrLeft(player.Direction, gameState);
+        
 
         public void Move(GameState gameState)
         {
@@ -40,7 +33,6 @@ namespace DiamondRush.Environments
                 (var environment, var creature) = gameState[nextPoint];
                 if (creature != null && fallHeight >= 1)
                 {
-                    gameState.MoveEnvironment(Location, nextPoint);
                     Location = nextPoint;
                     gameState.RemoveCreature(creature);
                     fallHeight++;
@@ -49,7 +41,6 @@ namespace DiamondRush.Environments
 
                 if (environment == null && creature == null)
                 {
-                    gameState.MoveEnvironment(Location, nextPoint);
                     Location = nextPoint;
                     fallHeight++;
                     return;
@@ -61,6 +52,13 @@ namespace DiamondRush.Environments
 
         public void ReactOnWeapon(Weapon.Weapon weapon, GameState gameState)
         {
+        }
+
+        public void DoLogicWhenCollapseWithPlayer(GameState gameState)
+        {
+            var point = gameState.Player.Location;
+            Location = new Point(point.X + DirectionToPoints[gameState.Player.Direction].X,
+                point.Y + DirectionToPoints[gameState.Player.Direction].Y);
         }
 
         private bool CanMoveToRightOrLeft(Direction direction, GameState gameState)

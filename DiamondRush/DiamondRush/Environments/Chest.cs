@@ -15,16 +15,7 @@ namespace DiamondRush.Environments
             Location = location;
         }
 
-        public void CollapseWithPlayer(GameState gameState, Player player)
-        {
-            if (!IsOpened)
-            {
-                player.AddWeapon(Weapon);
-                IsOpened = true;
-            }
-
-            player.Location = Location;
-        }
+        public bool IsCollapseWithPlayer(Player player, GameState gameState) => true;
 
         public void Move(GameState gameState)
         {
@@ -32,6 +23,15 @@ namespace DiamondRush.Environments
 
         public void ReactOnWeapon(Weapon.Weapon weapon, GameState gameState)
         {
+        }
+
+        public void DoLogicWhenCollapseWithPlayer(GameState gameState)
+        {
+            if (!IsOpened)
+            {
+                gameState.Player.AddWeapon(Weapon);
+                IsOpened = true;
+            }
         }
     }
 }

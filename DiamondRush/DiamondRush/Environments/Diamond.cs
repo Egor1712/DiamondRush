@@ -11,12 +11,7 @@ namespace DiamondRush.Environments
 
         public Diamond(Point location) => Location = location;
 
-        public void CollapseWithPlayer(GameState gameState, Player player)
-        {
-            player.Location = Location;
-            player.AddScore(20);
-            gameState.RemoveEnvironment(this);
-        }
+        public bool IsCollapseWithPlayer(Player player,  GameState gameState) => true;
 
         public void Move(GameState gameState)
         {
@@ -27,12 +22,17 @@ namespace DiamondRush.Environments
             if (!gameState.InBounds(nextPoint)) return;
             (var environment, var creature) = gameState[nextPoint];
             if (creature != null || environment != null) return;
-            gameState.MoveEnvironment(Location, nextPoint);
             Location = nextPoint;
         }
 
         public void ReactOnWeapon(Weapon.Weapon weapon, GameState gameState)
         {
+        }
+
+        public void DoLogicWhenCollapseWithPlayer(GameState gameState)
+        {
+            gameState.Player.AddScore(20);
+            gameState.RemoveEnvironment(this);
         }
     }
 }

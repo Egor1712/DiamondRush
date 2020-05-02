@@ -6,8 +6,9 @@ namespace DiamondRush.Environments
     public interface IEnvironment : IDrawable
     { 
         Point Location { get;}
-        void CollapseWithPlayer(GameState gameState, Player player);
+        bool IsCollapseWithPlayer(Player player, GameState gameState);
         void Move(GameState gameState);
         void ReactOnWeapon(Weapon.Weapon weapon, GameState gameState);
+        void DoLogicWhenCollapseWithPlayer(GameState gameState);
     }
 }
