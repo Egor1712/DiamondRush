@@ -76,26 +76,10 @@
         <option value="$PROJECT_DIR$/WeaponChooseForm.cs" />
         <option value="$PROJECT_DIR$/Weapon/Hammer.cs" />
         <option value="$PROJECT_DIR$/Weapon/FrozenHammer.cs" />
-        <option value="$PROJECT_DIR$/Creatures/ICreature.cs" />
-        <option value="$PROJECT_DIR$/Creatures/Archer.cs" />
-        <option value="$PROJECT_DIR$/Creatures/Monkey.cs" />
-        <option value="$PROJECT_DIR$/Creatures/RedSnake.cs" />
-        <option value="$PROJECT_DIR$/Environments/IEnvironment.cs" />
-        <option value="$PROJECT_DIR$/Environments/CheckPoint.cs" />
-        <option value="$PROJECT_DIR$/Environments/Chest.cs" />
-        <option value="$PROJECT_DIR$/Environments/Foliage.cs" />
-        <option value="$PROJECT_DIR$/Environments/FragileWall.cs" />
-        <option value="$PROJECT_DIR$/Environments/Wall.cs" />
-        <option value="$PROJECT_DIR$/Creatures/Arrow.cs" />
         <option value="$PROJECT_DIR$/Creatures/MoveLogic.cs" />
-        <option value="$PROJECT_DIR$/Creatures/SimpleSnake.cs" />
         <option value="$PROJECT_DIR$/Weapon/IWeapon.cs" />
-        <option value="$PROJECT_DIR$/Environments/Diamond.cs" />
-        <option value="$PROJECT_DIR$/Environments/Stone.cs" />
-        <option value="$PROJECT_DIR$/Player.cs" />
         <option value="$PROJECT_DIR$/Resources.cs" />
         <option value="$PROJECT_DIR$/Tests/fOLIAGEsHOULD.cs" />
-        <option value="$PROJECT_DIR$/GameState.cs" />
         <option value="$PROJECT_DIR$/Tests/ArcherShould.cs" />
         <option value="$PROJECT_DIR$/Tests/CheckPointShould.cs" />
         <option value="$PROJECT_DIR$/Tests/ChestShould.cs" />
@@ -107,6 +91,22 @@
         <option value="$PROJECT_DIR$/Tests/WallShould.cs" />
         <option value="$PROJECT_DIR$/Tests/StoneShould.cs" />
         <option value="$PROJECT_DIR$/MyForm.cs" />
+        <option value="$PROJECT_DIR$/GameState.cs" />
+        <option value="$PROJECT_DIR$/Environments/IEnvironment.cs" />
+        <option value="$PROJECT_DIR$/Environments/CheckPoint.cs" />
+        <option value="$PROJECT_DIR$/Environments/Chest.cs" />
+        <option value="$PROJECT_DIR$/Environments/Diamond.cs" />
+        <option value="$PROJECT_DIR$/Environments/Foliage.cs" />
+        <option value="$PROJECT_DIR$/Environments/FragileWall.cs" />
+        <option value="$PROJECT_DIR$/Environments/Wall.cs" />
+        <option value="$PROJECT_DIR$/Environments/Stone.cs" />
+        <option value="$PROJECT_DIR$/Creatures/ICreature.cs" />
+        <option value="$PROJECT_DIR$/Creatures/Archer.cs" />
+        <option value="$PROJECT_DIR$/Creatures/Monkey.cs" />
+        <option value="$PROJECT_DIR$/Creatures/RedSnake.cs" />
+        <option value="$PROJECT_DIR$/Creatures/SimpleSnake.cs" />
+        <option value="$PROJECT_DIR$/Creatures/Arrow.cs" />
+        <option value="$PROJECT_DIR$/Player.cs" />
         <option value="$PROJECT_DIR$/Program.cs" />
       </list>
     </option>
@@ -173,7 +173,8 @@
       <workItem from="1588225609216" duration="2407000" />
       <workItem from="1588228477671" duration="18805000" />
       <workItem from="1588308054510" duration="16778000" />
-      <workItem from="1588348521401" duration="3269000" />
+      <workItem from="1588348521401" duration="3878000" />
+      <workItem from="1588394925443" duration="3449000" />
     </task>
     <servers />
   </component>

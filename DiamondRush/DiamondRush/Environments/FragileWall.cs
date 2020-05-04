@@ -9,9 +9,7 @@ namespace DiamondRush.Environments
 
         public FragileWall(Point location) => Location = location;
 
-        public void CollapseWithPlayer(GameState gameState, Player player)
-        {
-        }
+        public bool IsCollapseWithPlayer(Player player, GameState gameState) => false;
 
         public void Move(GameState gameState)
         {
@@ -20,6 +18,10 @@ namespace DiamondRush.Environments
         public void ReactOnWeapon(Weapon.Weapon weapon, GameState gameState)
         {
             gameState.RemoveEnvironment(this);   
+        }
+
+        public void DoLogicWhenCollapseWithPlayer(GameState gameState)
+        {
         }
     }
 }

@@ -12,15 +12,18 @@ namespace DiamondRush.Environments
             Location = location;
         }
 
-        public void CollapseWithPlayer(GameState gameState, Player player)
-        {
-        }
+        public bool IsCollapseWithPlayer(Player player, GameState gameState) => false;
+        
 
         public void Move(GameState gameState)
         {
         }
 
         public void ReactOnWeapon(Weapon.Weapon weapon, GameState gameState)
+        {
+        }
+
+        public void DoLogicWhenCollapseWithPlayer(GameState gameState)
         {
         }
     }

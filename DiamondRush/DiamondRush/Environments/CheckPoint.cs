@@ -9,11 +9,7 @@ namespace DiamondRush.Environments
 
         public CheckPoint(Point location) => Location = location;
 
-        public void CollapseWithPlayer(GameState gameState, Player player)
-        {
-            player.ChangeCheckPoint(Location);
-            player.Location = Location;
-        }
+        public bool IsCollapseWithPlayer(Player player,  GameState gameState) => true;
 
         public void Move(GameState gameState)
         {
@@ -26,5 +22,7 @@ namespace DiamondRush.Environments
         public void ReactOnWeapon(Weapon.Weapon weapon, GameState gameState)
         {
         }
+
+        public void DoLogicWhenCollapseWithPlayer(GameState gameState) => gameState.Player.ChangeCheckPoint(Location);
     }
 }

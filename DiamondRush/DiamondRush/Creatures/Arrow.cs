@@ -43,10 +43,15 @@ namespace DiamondRush.Creatures
                 Location = nextPoint;
         }
 
-        public void CollapseWithPlayer(GameState gameState, Player player)
+        public bool IsCollapseWithPlayer(GameState gameState, Player player)
+        {
+            return false;
+        }
+
+        public void DoLogicWhenCollapseWithPlayer(GameState gameState)
         {
             gameState.RemoveCreature(this);
-            player.BeatPlayer();
+            gameState.Player.BeatPlayer();
         }
 
         public void ReactOnWeapon(Weapon.Weapon weapon)

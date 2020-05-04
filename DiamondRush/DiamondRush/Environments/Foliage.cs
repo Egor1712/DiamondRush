@@ -10,11 +10,7 @@ namespace DiamondRush.Environments
 
         public Foliage(Point location) => Location = location;
 
-        public void CollapseWithPlayer(GameState gameState, Player player)
-        {
-            player.Location = Location;
-            gameState.RemoveEnvironment(this);
-        }
+        public bool  IsCollapseWithPlayer(Player player,  GameState gameState) => true;
 
         public void Move(GameState gameState)
         {
@@ -25,9 +21,6 @@ namespace DiamondRush.Environments
             gameState.RemoveEnvironment(this);
         }
 
-        public override int GetHashCode()
-        {
-            return Location.GetHashCode();
-        }
+        public void DoLogicWhenCollapseWithPlayer(GameState gameState) => gameState.RemoveEnvironment(this);
     }
 }
