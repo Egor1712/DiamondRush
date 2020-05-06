@@ -28,14 +28,7 @@ namespace DiamondRush
 
         public void UpdateState()
         {
-            foreach (var gameObject in gameObjectsToRemove)
-                gameObjects.Remove(gameObject);
-            
-            gameObjectsToRemove.Clear();
-            foreach (var gameObject in gameObjectsToAdd)
-                gameObjects.Add(gameObject);
-            gameObjectsToAdd.Clear();
-            
+            UpdateCollections();
             foreach (var gameObject in gameObjects)
             {
                 if (gameObject is ICanMove environmentMove)
@@ -48,6 +41,17 @@ namespace DiamondRush
         
         public void AddGameObject(IGameObject gameObject) => gameObjectsToAdd.Add(gameObject);
         public void RemoveGameObject(IGameObject gameObject) => gameObjectsToRemove.Add(gameObject);
+
+        public void UpdateCollections()
+        {
+            foreach (var gameObject in gameObjectsToRemove)
+                gameObjects.Remove(gameObject);
+            
+            gameObjectsToRemove.Clear();
+            foreach (var gameObject in gameObjectsToAdd)
+                gameObjects.Add(gameObject);
+            gameObjectsToAdd.Clear();
+        }
         public void Draw(Graphics graphics)
         {
             foreach (var gameObject in gameObjects)

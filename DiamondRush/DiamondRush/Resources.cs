@@ -125,9 +125,9 @@ namespace DiamondRush
                         if (environment != null)
                             gameState.AddGameObject(environment);
                     }
-                    
                 }
             }
+            gameState.UpdateCollections();
         }
     }
 }

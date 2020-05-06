@@ -3,7 +3,7 @@ using static DiamondRush.Creatures.MoveLogic;
 
 namespace DiamondRush.Creatures
 {
-    public class RedSnake : IGameObject, ICanMove, ICanReactOnWeapon, ICanCollapseWithPlayer
+    public class RedSnake : ICreature, ICanMove, ICanReactOnWeapon, ICanCollapseWithPlayer
     {
         public string ImageName => $"RedSnakeRight";
         public Point Location { get; private set; }

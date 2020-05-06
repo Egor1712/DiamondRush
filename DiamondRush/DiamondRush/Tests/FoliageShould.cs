@@ -26,6 +26,7 @@ namespace DiamondRush.Tests
             var foliage = gameState[1, 0];
             Assert.AreEqual(new Point(0,1),foliage.Location);
             gameState.Player.Move(gameState, Direction.Down);
+            gameState.UpdateState();
             Assert.AreEqual(new Point(0,1), gameState.Player.Location);
             Assert.IsNull(gameState[1,0]);
         }

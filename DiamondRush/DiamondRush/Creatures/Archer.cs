@@ -4,7 +4,7 @@ using static DiamondRush.Resources;
 
 namespace DiamondRush.Creatures
 {
-    public class Archer : IGameObject, ICanReactOnWeapon, ICanMove, ICanCollapseWithPlayer
+    public class Archer : ICreature, ICanReactOnWeapon, ICanMove, ICanCollapseWithPlayer
     {
         public string ImageName => $"Archer";
         public Point Location { get; }

@@ -3,7 +3,7 @@ using static DiamondRush.Resources;
 
 namespace DiamondRush.Creatures
 {
-    public class SimpleSnake : IGameObject, ICanMove, ICanReactOnWeapon, ICanCollapseWithPlayer
+    public class SimpleSnake : ICreature, ICanMove, ICanReactOnWeapon, ICanCollapseWithPlayer
     {
         public Point Location { get; private set; }
         public string ImageName => $"Snake{Direction}";

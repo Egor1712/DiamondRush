@@ -18,7 +18,7 @@ namespace DiamondRush.Tests
             gameState.UpdateState();
             gameState.UpdateState();
             Assert.AreEqual(new Point(0, 2), stone.Location);
-            Assert.IsNull(gameState[2, 0]);
+            Assert.AreEqual(gameState[2, 0], stone);
         }
 
         [Test]

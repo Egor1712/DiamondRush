@@ -3,11 +3,14 @@ using static DiamondRush.Resources;
 
 namespace DiamondRush.Creatures
 {
-    public class Arrow : IGameObject, ICanMove, ICanCollapseWithPlayer
+    public class Arrow : ICreature, ICanMove, ICanCollapseWithPlayer
     {
         public string ImageName => $"Arrow";
         public Point Location { get; private set; }
         public Direction Direction { get; }
+        
+        public int BlockedSteps { get; }
+        public bool IsFrozen { get; }
 
         public Arrow(Point location, Direction direction)
         {
@@ -34,12 +37,13 @@ namespace DiamondRush.Creatures
 
             var gameObject = gameState[nextPoint];
             if (gameObject != null && gameObject is ICreature creature)
-            {
-                gameState.RemoveGameObject(this);
                 gameState.RemoveGameObject(creature);
-            }
             if (gameObject == null)
+            {
                 Location = nextPoint;
+                return;
+            }
+            gameState.RemoveGameObject(this);
         }
 
 

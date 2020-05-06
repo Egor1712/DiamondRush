@@ -68,7 +68,6 @@
         <option value="$PROJECT_DIR$/Weapon/FrozenHammer.cs" />
         <option value="$PROJECT_DIR$/Tests/fOLIAGEsHOULD.cs" />
         <option value="$PROJECT_DIR$/Environments/Wall.cs" />
-        <option value="$PROJECT_DIR$/Program.cs" />
         <option value="$PROJECT_DIR$/Drawable.cs" />
         <option value="$PROJECT_DIR$/IDrawable.cs" />
         <option value="$PROJECT_DIR$/ICanMove.cs" />
@@ -85,26 +84,27 @@
         <option value="$PROJECT_DIR$/Player.cs" />
         <option value="$PROJECT_DIR$/Weapon/IWeapon.cs" />
         <option value="$PROJECT_DIR$/Environments/Diamond.cs" />
-        <option value="$PROJECT_DIR$/Creatures/Arrow.cs" />
+        <option value="$PROJECT_DIR$/Creatures/MoveLogic.cs" />
+        <option value="$PROJECT_DIR$/Environments/Stone.cs" />
+        <option value="$PROJECT_DIR$/MyForm.cs" />
+        <option value="$PROJECT_DIR$/Tests/WallShould.cs" />
+        <option value="$PROJECT_DIR$/GameState.cs" />
+        <option value="$PROJECT_DIR$/Tests/SimpleSnakeShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/HammerShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/ChestShould.cs" />
+        <option value="$PROJECT_DIR$/Resources.cs" />
         <option value="$PROJECT_DIR$/Creatures/Archer.cs" />
         <option value="$PROJECT_DIR$/Creatures/Monkey.cs" />
         <option value="$PROJECT_DIR$/Creatures/RedSnake.cs" />
         <option value="$PROJECT_DIR$/Creatures/SimpleSnake.cs" />
-        <option value="$PROJECT_DIR$/Creatures/MoveLogic.cs" />
-        <option value="$PROJECT_DIR$/Environments/Stone.cs" />
-        <option value="$PROJECT_DIR$/Resources.cs" />
-        <option value="$PROJECT_DIR$/GameState.cs" />
-        <option value="$PROJECT_DIR$/MyForm.cs" />
         <option value="$PROJECT_DIR$/Tests/ArcherShould.cs" />
         <option value="$PROJECT_DIR$/Tests/CheckPointShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/ChestShould.cs" />
         <option value="$PROJECT_DIR$/Tests/FoliageShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/HammerShould.cs" />
         <option value="$PROJECT_DIR$/Tests/MonkeyShould.cs" />
         <option value="$PROJECT_DIR$/Tests/RedSnakeShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/SimpleSnakeShould.cs" />
         <option value="$PROJECT_DIR$/Tests/StoneShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/WallShould.cs" />
+        <option value="$PROJECT_DIR$/Program.cs" />
+        <option value="$PROJECT_DIR$/Creatures/Arrow.cs" />
       </list>
     </option>
   </component>
@@ -129,7 +129,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected=".NET Project.Default">
     <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/bin/Debug/netcoreapp3.0/DiamondRush.dll" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -173,7 +173,7 @@
       <workItem from="1588348521401" duration="3878000" />
       <workItem from="1588394925443" duration="3449000" />
       <workItem from="1588594175168" duration="2562000" />
-      <workItem from="1588742133184" duration="4940000" />
+      <workItem from="1588742133184" duration="7109000" />
     </task>
     <servers />
   </component>
