@@ -49,7 +49,7 @@ namespace DiamondRush
             }
         }
 
-        public static IEnvironment CharToEnvironment(char symbol, Point location)
+        public static IGameObject CharToEnvironment(char symbol, Point location)
         {
             switch (symbol)
             {
@@ -64,9 +64,9 @@ namespace DiamondRush
                 case 'W' :
                     return new Wall(location);
                 case 'H' :
-                    return new Chest(new Hammer(), location);
+                    return new Chest(location, new Hammer());
                 case 'R':
-                    return new Chest(new FrozenHammer(),location);
+                    return new Chest(location, new FrozenHammer());
                 case 'E' :
                     return new FragileWall(location);
             }
@@ -74,7 +74,7 @@ namespace DiamondRush
             return null;
         }
 
-        public static ICreature CharToCreature(char symbol, Point location, Direction direction = Direction.Down)
+        public static IGameObject CharToCreature(char symbol, Point location, Direction direction = Direction.Down)
         {
             switch (symbol)
             {
@@ -103,7 +103,31 @@ namespace DiamondRush
                 else
                     MapOfCreatures = stream.ReadToEnd();
             }
-
+        }
+        
+        public static void ParseAllGameState(GameState gameState, string mapOfEnvironments, string mapOfCreatures)
+        {
+            var rowsEnv = mapOfEnvironments.Split(new[] {'\n'});
+            var rowsCr = mapOfCreatures.Split(new[] {'\n'});
+            for (var i = 0; i < gameState.Height; i++)
+            {
+                for (var j = 0; j < gameState.Width; j++)
+                {
+                    if (i < rowsCr.Length && j < rowsCr[i].Length)
+                    {
+                        var creature = CharToCreature(rowsCr[i][j], new Point(j, i));
+                        if (creature != null)
+                            gameState.AddGameObject(creature);
+                    }
+                    if (i < rowsEnv.Length && j < rowsEnv[i].Length)
+                    {
+                        var environment = CharToEnvironment(rowsEnv[i][j], new Point(j, i));
+                        if (environment != null)
+                            gameState.AddGameObject(environment);
+                    }
+                    
+                }
+            }
         }
     }
 }

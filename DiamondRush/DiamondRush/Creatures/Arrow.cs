@@ -3,13 +3,11 @@ using static DiamondRush.Resources;
 
 namespace DiamondRush.Creatures
 {
-    public class Arrow : ICreature
+    public class Arrow : IGameObject, ICanMove, ICanCollapseWithPlayer
     {
         public string ImageName => $"Arrow";
         public Point Location { get; private set; }
         public Direction Direction { get; }
-        public int BlockedSteps => 0;
-        public bool IsFrozen => false;
 
         public Arrow(Point location, Direction direction)
         {
@@ -23,39 +21,32 @@ namespace DiamondRush.Creatures
                 Location.Y + DirectionToPoints[Direction].Y);
             if (!gameState.InBounds(nextPoint))
             {
-                gameState.RemoveCreature(this);
+                gameState.RemoveGameObject(this);
                 return;
             }
 
             if (gameState.Player.Location == nextPoint)
             {
                 gameState.Player.BeatPlayer();
-                gameState.RemoveCreature(this);
+                gameState.RemoveGameObject(this);
                 return;
             }
 
-            (var environment, var creature) = gameState[nextPoint];
-            if (environment != null)
-                gameState.RemoveCreature(this);
-            if (creature != null)
-                gameState.RemoveCreature(creature);
-            if (creature == null && environment == null)
+            var gameObject = gameState[nextPoint];
+            if (gameObject != null && gameObject is ICreature creature)
+            {
+                gameState.RemoveGameObject(this);
+                gameState.RemoveGameObject(creature);
+            }
+            if (gameObject == null)
                 Location = nextPoint;
         }
 
-        public bool IsCollapseWithPlayer(GameState gameState, Player player)
-        {
-            return false;
-        }
 
-        public void DoLogicWhenCollapseWithPlayer(GameState gameState)
+        public void CollapseWithPlayer(GameState gameState)
         {
-            gameState.RemoveCreature(this);
+            gameState.RemoveGameObject(this);
             gameState.Player.BeatPlayer();
-        }
-
-        public void ReactOnWeapon(Weapon.Weapon weapon)
-        {
         }
     }
 }

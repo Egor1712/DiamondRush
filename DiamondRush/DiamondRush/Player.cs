@@ -50,19 +50,14 @@ namespace DiamondRush
             var nextPoint = new Point(Location.X + DirectionToPoints[direction].X,
                 Location.Y + DirectionToPoints[direction].Y);
             if (!gameState.InBounds(nextPoint)) return;
-            (var environment, var creature) = gameState[nextPoint];
-            if (environment != null && environment.IsCollapseWithPlayer(this, gameState))
+            var gameObject = gameState[nextPoint];
+            if (gameObject != null && gameObject is ICanCollapseWithPlayer collapseWithPlayer)
             {
                 Location = nextPoint;
-                environment.DoLogicWhenCollapseWithPlayer(gameState);
+                collapseWithPlayer.CollapseWithPlayer(gameState);
             }
-            if (creature != null && creature.IsCollapseWithPlayer(gameState, this))
-            {
-                Location = nextPoint;
-                creature.DoLogicWhenCollapseWithPlayer(gameState);
-            }
-                
-            if (environment == null && creature == null)
+            
+            if (gameObject == null)
                 Location = nextPoint;
         }
         

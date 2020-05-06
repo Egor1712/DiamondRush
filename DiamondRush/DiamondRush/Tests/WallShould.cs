@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using NUnit.Framework;
+using static DiamondRush.Resources;
 
 namespace DiamondRush.Tests
 {
@@ -10,9 +11,9 @@ namespace DiamondRush.Tests
         public void WallShouldNotInteractWithOtherObject()
         {
             var gameState = new GameState(1,3, new Player(new Point(0,0), Direction.Down));
-            gameState.ParseAllGameState("S\n\nW", "");
-            var checkPoint = gameState[2, 0].Enviroment;
-            var stone = gameState[0, 0].Enviroment;
+            ParseAllGameState(gameState, "S\n\nW", "");
+            var checkPoint = gameState[2, 0];
+            var stone = gameState[0, 0];
             Assert.AreEqual(new Point(0,0),stone.Location);
             Assert.AreEqual(new Point(0,2), checkPoint.Location);
             gameState.UpdateState();

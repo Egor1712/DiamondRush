@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using NUnit.Framework;
+using static DiamondRush.Resources;
 
 namespace DiamondRush.Tests
 {
@@ -10,8 +11,8 @@ namespace DiamondRush.Tests
         public void PlayerShouldAppearIntoCheckPointAfterDeath()
         {
             var gameState = new GameState(1,4,new Player(new Point(0,3), Direction.Down, 1));
-            gameState.ParseAllGameState("S\n\n\nC", "");
-            var stone = gameState[0, 0].Enviroment;
+            ParseAllGameState(gameState, "S\n\n\nC", "");
+            var stone = gameState[0, 0];
             Assert.AreEqual(new Point(0,0),stone.Location );
             Assert.AreEqual(new Point(0,3), gameState.Player.Location);
             gameState.UpdateState();
@@ -24,10 +25,10 @@ namespace DiamondRush.Tests
         [Test]
         public void CheckPointShouldNotInteractWithOtherObjects()
         {
-            var gameState = new GameState(1,3, new Player(new Point(0,0), Direction.Down));
-            gameState.ParseAllGameState("S\n\nC", "");
-            var checkPoint = gameState[2, 0].Enviroment;
-            var stone = gameState[0, 0].Enviroment;
+            var gameState = new GameState(1,3, new Player(new Point(0,0), Direction.Down)); 
+            ParseAllGameState(gameState, "S\n\nC", "");
+            var checkPoint = gameState[2, 0];
+            var stone = gameState[0, 0];
             Assert.AreEqual(new Point(0,0),stone.Location);
             Assert.AreEqual(new Point(0,2), checkPoint.Location);
             gameState.UpdateState();

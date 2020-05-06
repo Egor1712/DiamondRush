@@ -1,31 +1,20 @@
 ﻿using System.Drawing;
-
 namespace DiamondRush.Environments
 {
-    public class Chest : IEnvironment
+    public class Chest : IGameObject, ICanCollapseWithPlayer
     {
         public string ImageName => IsOpened ? "ChestOpen" : "ChestClose";
         public Point Location { get; }
         public bool IsOpened { get; private set; }
         public Weapon.Weapon Weapon { get; }
 
-        public Chest(Weapon.Weapon weapon, Point location)
+        public Chest(Point location, Weapon.Weapon weapon)
         {
-            Weapon = weapon;
             Location = location;
+            Weapon = weapon;
         }
-
-        public bool IsCollapseWithPlayer(Player player, GameState gameState) => true;
-
-        public void Move(GameState gameState)
-        {
-        }
-
-        public void ReactOnWeapon(Weapon.Weapon weapon, GameState gameState)
-        {
-        }
-
-        public void DoLogicWhenCollapseWithPlayer(GameState gameState)
+        
+        public void CollapseWithPlayer(GameState gameState)
         {
             if (!IsOpened)
             {

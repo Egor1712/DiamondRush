@@ -24,7 +24,7 @@ namespace DiamondRush
                 Interval = 80
             };
 
-            gameState.ParseAllGameState(MapOfEnvironment,MapOfCreatures);
+            ParseAllGameState(gameState,MapOfEnvironment,MapOfCreatures);
             Paint += (sender, args) => gameState.Draw(args.Graphics);
             timer.Tick += (sender, args) => gameState.UpdateState();
             timer.Tick += (sender, args) => Invalidate();

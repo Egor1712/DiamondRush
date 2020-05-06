@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using NUnit.Framework;
+using static DiamondRush.Resources;
 
 namespace DiamondRush.Tests
 {
@@ -10,11 +11,11 @@ namespace DiamondRush.Tests
         public void StoneShouldFall()
         {
             var gameState = new GameState(1,2,new Player(new Point(-1,-1), Direction.Down ));
-            gameState.ParseAllGameState(@"S","");
-            var stone = gameState[0, 0].Enviroment;
+            ParseAllGameState(gameState, @"S","");
+            var stone = gameState[0, 0];
             Assert.AreEqual(new Point(0,0),  stone.Location);
             gameState.UpdateState();
-            Assert.AreEqual(null, gameState[0,0].Enviroment);
+            Assert.AreEqual(null, gameState[0,0]);
             Assert.AreEqual(new Point(0,1),stone.Location );
         }
 
@@ -22,8 +23,8 @@ namespace DiamondRush.Tests
         public void StoneShouldNotFallIntoPlayer()
         {
             var gameState = new GameState(1,2,new Player(new Point(0,1), Direction.Left ));
-            gameState.ParseAllGameState(@"S", "");
-            var stone = gameState[0, 0].Enviroment;
+            ParseAllGameState(gameState, @"S", "");
+            var stone = gameState[0, 0];
             Assert.AreEqual(new Point(0,0), stone.Location);
             gameState.UpdateState();
             Assert.AreEqual(new Point(0,0), stone.Location );
@@ -34,8 +35,8 @@ namespace DiamondRush.Tests
         public void StoneShouldBeatPlayer()
         {
             var gameState = new GameState(1,3,new Player(new Point(0,2), Direction.Down ));
-            gameState.ParseAllGameState(@"S", "");
-            var stone = gameState[0, 0].Enviroment;
+            ParseAllGameState(gameState, @"S", "");
+            var stone = gameState[0, 0];
             Assert.AreEqual(new Point(0,0), stone.Location );
             gameState.UpdateState();
             Assert.AreEqual(new Point(0,1), stone.Location );
@@ -48,9 +49,9 @@ namespace DiamondRush.Tests
         public void StoneShouldKillSnake()
         {
             var gameState = new GameState(1,3,new Player(new Point(-1,-1), Direction.Down ));
-            gameState.ParseAllGameState(@"S", "\n\nS");
-            var stone = gameState[0, 0].Enviroment;
-            var snake = gameState[2, 0].Creature;
+            ParseAllGameState(gameState, @"S", "\n\nS");
+            var stone = gameState[0, 0];
+            var snake = gameState[2, 0];
             Assert.AreEqual(new Point(0,0) ,stone.Location );
             Assert.AreEqual(new Point(0,2), snake.Location );
             gameState.UpdateState();
@@ -58,16 +59,16 @@ namespace DiamondRush.Tests
             Assert.AreEqual(new Point(0,2),snake.Location );
             gameState.UpdateState();
             Assert.AreEqual(new Point(0,2),stone.Location );
-            Assert.IsNull(gameState[2,0].Creature);
+            Assert.IsNull(gameState[2,0]);
         }
 
         [Test]
         public void StoneShouldNotCollapseWithAnotherStone()
         {
             var gameState = new GameState(1,3, new Player(new Point(-1,-1), Direction.Down ));
-            gameState.ParseAllGameState("S\n\nS", "");
-            var firstStone = gameState[0, 0].Enviroment;
-            var secondStone = gameState[2, 0].Enviroment;
+            ParseAllGameState(gameState, "S\n\nS", "");
+            var firstStone = gameState[0, 0];
+            var secondStone = gameState[2, 0];
             Assert.AreEqual(new Point(0,0),firstStone.Location );
             Assert.AreEqual(new Point(0,2), secondStone.Location);
             gameState.UpdateState();

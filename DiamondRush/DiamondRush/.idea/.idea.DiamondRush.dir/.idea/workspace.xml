@@ -21,17 +21,14 @@
     <setting file="file://$PROJECT_DIR$/Tests/MonkeyShould.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Creatures/RedSnake.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Creatures/Monkey.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/IDrawable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Environments/Stone.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Environments/Wall.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Environments/wall.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Environments/Foliage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Environments/IEnvironment.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tests/HammerShould.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Environments/Diamond.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tests/StoneShould.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Environments/CheckPoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Weapon/Hammer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Creatures/ICreature.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Creatures/SimpleSnake.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Weapon/IWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Weapon/FrozenHammer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -57,29 +54,47 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/IEnvironment.cs" />
-        <option value="$PROJECT_DIR$/CheckPoint.cs" />
-        <option value="$PROJECT_DIR$/Stone.cs" />
-        <option value="$PROJECT_DIR$/Diamond.cs" />
-        <option value="$PROJECT_DIR$/ICreature.cs" />
-        <option value="$PROJECT_DIR$/SimpleSnake.cs" />
         <option value="$PROJECT_DIR$/StoneShould.cs" />
         <option value="$PROJECT_DIR$/FoliageShould.cs" />
         <option value="$PROJECT_DIR$/SimplleSnakeShould.cs" />
         <option value="$PROJECT_DIR$/wall.cs" />
         <option value="$PROJECT_DIR$/Tests/SimplleSnakeShould.cs" />
         <option value="$PROJECT_DIR$/IWeapon.cs" />
-        <option value="$PROJECT_DIR$/Environments/wall.cs" />
         <option value="$PROJECT_DIR$/Environments/FrozenDiamond.cs" />
         <option value="$PROJECT_DIR$/Creatures/WeaponsForm.Designer.cs" />
         <option value="$PROJECT_DIR$/WeaponChooseForm.Designer.cs" />
         <option value="$PROJECT_DIR$/WeaponChooseForm.cs" />
         <option value="$PROJECT_DIR$/Weapon/Hammer.cs" />
         <option value="$PROJECT_DIR$/Weapon/FrozenHammer.cs" />
-        <option value="$PROJECT_DIR$/Creatures/MoveLogic.cs" />
-        <option value="$PROJECT_DIR$/Weapon/IWeapon.cs" />
-        <option value="$PROJECT_DIR$/Resources.cs" />
         <option value="$PROJECT_DIR$/Tests/fOLIAGEsHOULD.cs" />
+        <option value="$PROJECT_DIR$/Environments/Wall.cs" />
+        <option value="$PROJECT_DIR$/Program.cs" />
+        <option value="$PROJECT_DIR$/Drawable.cs" />
+        <option value="$PROJECT_DIR$/IDrawable.cs" />
+        <option value="$PROJECT_DIR$/ICanMove.cs" />
+        <option value="$PROJECT_DIR$/ICanReactOnWeapon.cs" />
+        <option value="$PROJECT_DIR$/ICanCollapseWithPlayer.cs" />
+        <option value="$PROJECT_DIR$/IGameObject.cs" />
+        <option value="$PROJECT_DIR$/Environments/IEnvironment.cs" />
+        <option value="$PROJECT_DIR$/Environments/CheckPoint.cs" />
+        <option value="$PROJECT_DIR$/Environments/Chest.cs" />
+        <option value="$PROJECT_DIR$/Environments/Foliage.cs" />
+        <option value="$PROJECT_DIR$/Environments/FragileWall.cs" />
+        <option value="$PROJECT_DIR$/Environments/wall.cs" />
+        <option value="$PROJECT_DIR$/Creatures/ICreature.cs" />
+        <option value="$PROJECT_DIR$/Player.cs" />
+        <option value="$PROJECT_DIR$/Weapon/IWeapon.cs" />
+        <option value="$PROJECT_DIR$/Environments/Diamond.cs" />
+        <option value="$PROJECT_DIR$/Creatures/Arrow.cs" />
+        <option value="$PROJECT_DIR$/Creatures/Archer.cs" />
+        <option value="$PROJECT_DIR$/Creatures/Monkey.cs" />
+        <option value="$PROJECT_DIR$/Creatures/RedSnake.cs" />
+        <option value="$PROJECT_DIR$/Creatures/SimpleSnake.cs" />
+        <option value="$PROJECT_DIR$/Creatures/MoveLogic.cs" />
+        <option value="$PROJECT_DIR$/Environments/Stone.cs" />
+        <option value="$PROJECT_DIR$/Resources.cs" />
+        <option value="$PROJECT_DIR$/GameState.cs" />
+        <option value="$PROJECT_DIR$/MyForm.cs" />
         <option value="$PROJECT_DIR$/Tests/ArcherShould.cs" />
         <option value="$PROJECT_DIR$/Tests/CheckPointShould.cs" />
         <option value="$PROJECT_DIR$/Tests/ChestShould.cs" />
@@ -88,26 +103,8 @@
         <option value="$PROJECT_DIR$/Tests/MonkeyShould.cs" />
         <option value="$PROJECT_DIR$/Tests/RedSnakeShould.cs" />
         <option value="$PROJECT_DIR$/Tests/SimpleSnakeShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/WallShould.cs" />
         <option value="$PROJECT_DIR$/Tests/StoneShould.cs" />
-        <option value="$PROJECT_DIR$/MyForm.cs" />
-        <option value="$PROJECT_DIR$/GameState.cs" />
-        <option value="$PROJECT_DIR$/Environments/IEnvironment.cs" />
-        <option value="$PROJECT_DIR$/Environments/CheckPoint.cs" />
-        <option value="$PROJECT_DIR$/Environments/Chest.cs" />
-        <option value="$PROJECT_DIR$/Environments/Diamond.cs" />
-        <option value="$PROJECT_DIR$/Environments/Foliage.cs" />
-        <option value="$PROJECT_DIR$/Environments/FragileWall.cs" />
-        <option value="$PROJECT_DIR$/Environments/Wall.cs" />
-        <option value="$PROJECT_DIR$/Environments/Stone.cs" />
-        <option value="$PROJECT_DIR$/Creatures/ICreature.cs" />
-        <option value="$PROJECT_DIR$/Creatures/Archer.cs" />
-        <option value="$PROJECT_DIR$/Creatures/Monkey.cs" />
-        <option value="$PROJECT_DIR$/Creatures/RedSnake.cs" />
-        <option value="$PROJECT_DIR$/Creatures/SimpleSnake.cs" />
-        <option value="$PROJECT_DIR$/Creatures/Arrow.cs" />
-        <option value="$PROJECT_DIR$/Player.cs" />
-        <option value="$PROJECT_DIR$/Program.cs" />
+        <option value="$PROJECT_DIR$/Tests/WallShould.cs" />
       </list>
     </option>
   </component>
@@ -132,7 +129,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected=".NET Project.Default">
+  <component name="RunManager">
     <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/bin/Debug/netcoreapp3.0/DiamondRush.dll" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -175,6 +172,8 @@
       <workItem from="1588308054510" duration="16778000" />
       <workItem from="1588348521401" duration="3878000" />
       <workItem from="1588394925443" duration="3449000" />
+      <workItem from="1588594175168" duration="2562000" />
+      <workItem from="1588742133184" duration="4940000" />
     </task>
     <servers />
   </component>
