@@ -6,7 +6,7 @@
         {
             IsFrozen = true;
             Force = 40;
-            ImageName = "Frozen Hammer";
+            ImageName = "FrozenHammer";
         }
     }
 }

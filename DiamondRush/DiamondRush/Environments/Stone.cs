@@ -12,7 +12,7 @@ namespace DiamondRush.Environments
         private int fallHeight;
 
 
-        private bool CanCollapseWithPlayer(Player player,  GameState gameState) =>
+        public bool CanCollapseWithPlayer(Player player,  GameState gameState) =>
              (player.Direction == Direction.Left || player.Direction == Direction.Right)
              && CanMoveToRightOrLeft(player.Direction, gameState);
         

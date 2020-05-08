@@ -49,7 +49,7 @@ namespace DiamondRush
             }
         }
 
-        public static IGameObject CharToEnvironment(char symbol, Point location)
+        private static IGameObject CharToEnvironment(char symbol, Point location)
         {
             switch (symbol)
             {

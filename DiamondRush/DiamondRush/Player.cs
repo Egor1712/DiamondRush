@@ -1,11 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
+using DiamondRush.Environments;
+using NUnit.Framework.Internal.Execution;
 using static DiamondRush.Resources;
 
 namespace DiamondRush
 {
     public class Player
     {
+        public event WeaponChanged NotifyWeaponChanged;
+        public event ScoreChanged NotifyScoreChanged;
+        public event HealthChanged NotifyHealthChanged;
         public Point Location { get; private set; }
         public Direction Direction { get; private set; }
         public int Health { get; private set; }
@@ -13,6 +18,7 @@ namespace DiamondRush
         private Point LastCheckPoint { get;  set; }
         public Weapon.Weapon CurrentWeapon { get; private set; }
         private readonly List<Weapon.Weapon> weapons = new List<Weapon.Weapon>();
+        
         public string ImageName => $"Player{Direction}";
 
         public Player(Point location, Direction direction, int health = 3)
@@ -26,6 +32,7 @@ namespace DiamondRush
         {
             weapons.Add(weapon);
             CurrentWeapon = weapon;
+            NotifyWeaponChanged?.Invoke();
         }
 
         private void ResetPlayer()
@@ -40,6 +47,7 @@ namespace DiamondRush
                 Health--;
             else
                ResetPlayer();
+            NotifyHealthChanged?.Invoke();
         }
 
         public void ChangeCheckPoint(Point point) => LastCheckPoint = point;
@@ -53,6 +61,8 @@ namespace DiamondRush
             var gameObject = gameState[nextPoint];
             if (gameObject != null && gameObject is ICanCollapseWithPlayer collapseWithPlayer)
             {
+                if (collapseWithPlayer is Stone stone && !stone.CanCollapseWithPlayer(this, gameState))
+                    return;
                 Location = nextPoint;
                 collapseWithPlayer.CollapseWithPlayer(gameState);
             }
@@ -69,6 +79,23 @@ namespace DiamondRush
         public void AddScore(int score)
         {
             Score += score;
+            NotifyScoreChanged?.Invoke();
+        }
+
+        public void ChangeWeapon()
+        {
+            if (weapons.Count == 0)
+                return;
+            var index = weapons.IndexOf(CurrentWeapon);
+            if (index + 1 < weapons.Count)
+            {
+                CurrentWeapon = weapons[index + 1];
+                NotifyWeaponChanged?.Invoke();
+                return;
+            }
+
+            CurrentWeapon = weapons[0];
+            NotifyWeaponChanged?.Invoke();
         }
         
         public void ChangeDirection(Direction direction)

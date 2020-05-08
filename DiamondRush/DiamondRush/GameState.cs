@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using DiamondRush.Creatures;
 using static DiamondRush.Resources;
 
 namespace DiamondRush
 {
     public class GameState
     {
-        private static int Coefficient = 45;
+        public static int Coefficient = 45;
         public int Width { get; }
         public int Height { get; }
         private readonly List<IGameObject> gameObjectsToRemove = new List<IGameObject>();
