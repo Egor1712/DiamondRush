@@ -48,6 +48,7 @@ namespace DiamondRush
             gameState.Player.NotifyScoreChanged += UpdateScore;
             gameState.Player.NotifyHealthChanged += () => layout.Invalidate();
             gameState.Player.AddWeapon(new FrozenHammer());
+            gameState.Player.AddWeapon(new Democracy());
             ParseAllGameState(gameState,MapOfEnvironment,MapOfCreatures);
         }
 

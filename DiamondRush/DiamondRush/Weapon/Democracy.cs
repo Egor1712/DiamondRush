@@ -6,6 +6,7 @@
         {
             IsFrozen = true;
             Force = 100;
+            ImageName = "Democracy";
         }
     }
 }

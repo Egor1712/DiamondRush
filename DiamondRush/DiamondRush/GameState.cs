@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
+using System.Windows.Forms;
+using DiamondRush.Creatures;
 using static DiamondRush.Resources;
 
 namespace DiamondRush
@@ -51,11 +54,30 @@ namespace DiamondRush
                 gameObjects.Add(gameObject);
             gameObjectsToAdd.Clear();
         }
+
+        public void UseWeaponForAllCreatures(Weapon.Weapon weapon)
+        {
+            var count = 0;
+            foreach (var gameObject in gameObjects)
+            {
+                if (gameObject is ICreature && gameObject is ICanReactOnWeapon reactOnWeapon)
+                {
+                    count++;
+                    reactOnWeapon.ReactOnWeapon(weapon, this);
+                }
+            }
+
+            MessageBox.Show(
+                $"Вы использовали оружие 'Демократия'!\nВ тюрьму посажено {count} существ на {weapon.Force} ходов!\nСлава Pутэну!");
+        }
+
         public void Draw(Graphics graphics)
         {
             foreach (var gameObject in gameObjects)
             {
-                graphics.DrawImage(Images[gameObject.ImageName], new Point(gameObject.Location.X*Coefficient,
+                var imageName = gameObject is ICreature creature && creature.IsFrozen ?  gameObject.ImageName + "Froz":
+                    gameObject.ImageName;
+                graphics.DrawImage(Images[imageName], new Point(gameObject.Location.X*Coefficient,
                     gameObject.Location.Y*Coefficient));
             }
             

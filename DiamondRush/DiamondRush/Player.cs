@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 using DiamondRush.Environments;
+using DiamondRush.Weapon;
 using NUnit.Framework.Internal.Execution;
 using static DiamondRush.Resources;
 
@@ -73,6 +74,12 @@ namespace DiamondRush
         
         public void UseWeapon(GameState gameState)
         {
+            if (CurrentWeapon is Democracy)
+            {
+                gameState.UseWeaponForAllCreatures(CurrentWeapon);
+                return;
+            }
+
             CurrentWeapon?.DoWork(gameState, Direction);
         }
 

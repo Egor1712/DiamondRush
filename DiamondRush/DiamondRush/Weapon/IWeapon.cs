@@ -10,7 +10,7 @@ namespace DiamondRush.Weapon
         
         public string ImageName { get; protected set; }
 
-        protected void DoWork(GameState gameState, Direction direction)
+        public void DoWork(GameState gameState, Direction direction)
         {
             var actionPoint = new Point(gameState.Player.Location.X + DirectionToPoints[direction].X,
                 gameState.Player.Location.Y + DirectionToPoints[direction].Y);
