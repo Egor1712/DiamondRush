@@ -21,7 +21,7 @@ namespace DiamondRush
 
         public string ImageName => $"Player{Direction}";
 
-        public Player(Point location, Direction direction, int health = 3)
+        public Player(Point location, Direction direction, int health = 10)
         {
             Location = location;
             Direction = direction;

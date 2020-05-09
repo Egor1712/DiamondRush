@@ -43,7 +43,7 @@ namespace DiamondRush
             size = Screen.GetBounds(Location);
             gameState = new GameState(size.Width / GameState.Coefficient,
                 (size.Height - layout.Height) / GameState.Coefficient - 2,
-                new Player(new Point(2, 0), Direction.Right, 100));
+                new Player(new Point(2, 0), Direction.Right));
             gameState.Player.NotifyWeaponChanged += () => layout.Invalidate();
             gameState.Player.NotifyScoreChanged += UpdateScore;
             gameState.Player.NotifyHealthChanged += () => layout.Invalidate();

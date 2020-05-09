@@ -121,10 +121,10 @@
         <option value="$PROJECT_DIR$/Environments/Stone.cs" />
         <option value="$PROJECT_DIR$/Weapon/IWeapon.cs" />
         <option value="$PROJECT_DIR$/Weapon/Democracy.cs" />
-        <option value="$PROJECT_DIR$/Player.cs" />
         <option value="$PROJECT_DIR$/Resources.cs" />
         <option value="$PROJECT_DIR$/GameState.cs" />
         <option value="$PROJECT_DIR$/MyForm.cs" />
+        <option value="$PROJECT_DIR$/Player.cs" />
       </list>
     </option>
   </component>
@@ -198,7 +198,7 @@
       <workItem from="1588777666896" duration="284000" />
       <workItem from="1588833581638" duration="1808000" />
       <workItem from="1588915986801" duration="21319000" />
-      <workItem from="1588998394639" duration="260000" />
+      <workItem from="1588998394639" duration="766000" />
     </task>
     <servers />
   </component>
