@@ -2,7 +2,6 @@
 using System.Drawing;
 using DiamondRush.Environments;
 using DiamondRush.Weapon;
-using NUnit.Framework.Internal.Execution;
 using static DiamondRush.Resources;
 
 namespace DiamondRush
@@ -16,10 +15,10 @@ namespace DiamondRush
         public Direction Direction { get; private set; }
         public int Health { get; private set; }
         public int Score { get; private set; }
-        private Point LastCheckPoint { get;  set; }
+        private Point LastCheckPoint { get; set; }
         public Weapon.Weapon CurrentWeapon { get; private set; }
         private readonly List<Weapon.Weapon> weapons = new List<Weapon.Weapon>();
-        
+
         public string ImageName => $"Player{Direction}";
 
         public Player(Point location, Direction direction, int health = 3)
@@ -41,13 +40,13 @@ namespace DiamondRush
             Location = LastCheckPoint;
             Health = 3;
         }
-        
+
         public void BeatPlayer()
         {
             if (Health > 1)
                 Health--;
             else
-               ResetPlayer();
+                ResetPlayer();
             NotifyHealthChanged?.Invoke();
         }
 
@@ -67,11 +66,11 @@ namespace DiamondRush
                 Location = nextPoint;
                 collapseWithPlayer.CollapseWithPlayer(gameState);
             }
-            
+
             if (gameObject == null)
                 Location = nextPoint;
         }
-        
+
         public void UseWeapon(GameState gameState)
         {
             if (CurrentWeapon is Democracy)
@@ -104,7 +103,7 @@ namespace DiamondRush
             CurrentWeapon = weapons[0];
             NotifyWeaponChanged?.Invoke();
         }
-        
+
         public void ChangeDirection(Direction direction)
         {
             Direction = direction;

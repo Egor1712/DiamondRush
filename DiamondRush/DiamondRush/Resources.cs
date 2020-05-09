@@ -12,12 +12,12 @@ namespace DiamondRush
     {
         public static readonly Dictionary<Direction, Point> DirectionToPoints = new Dictionary<Direction, Point>
         {
-            [Direction.Down] = new Point(0,1),
-            [Direction.Up] = new Point(0,-1),
-            [Direction.Left] = new Point(-1,0),
-            [Direction.Right] = new Point(1,0)
+            [Direction.Down] = new Point(0, 1),
+            [Direction.Up] = new Point(0, -1),
+            [Direction.Left] = new Point(-1, 0),
+            [Direction.Right] = new Point(1, 0)
         };
-        
+
         public static readonly Dictionary<Direction, Direction> OppositeDirection = new Dictionary<Direction, Direction>
         {
             [Direction.Down] = Direction.Up,
@@ -25,7 +25,7 @@ namespace DiamondRush
             [Direction.Right] = Direction.Left,
             [Direction.Up] = Direction.Down
         };
-        
+
         public static readonly Dictionary<Keys, Direction> KeysToDirection = new Dictionary<Keys, Direction>
         {
             [Keys.W] = Direction.Up,
@@ -33,7 +33,7 @@ namespace DiamondRush
             [Keys.A] = Direction.Left,
             [Keys.S] = Direction.Down
         };
-        
+
         public static readonly Dictionary<string, Image> Images = new Dictionary<string, Image>();
         public static string MapOfEnvironment;
         public static string MapOfCreatures;
@@ -54,20 +54,20 @@ namespace DiamondRush
             switch (symbol)
             {
                 case 'S':
-                    return new Stone{Location = location};
+                    return new Stone {Location = location};
                 case 'F':
                     return new Foliage(location);
-                case 'D' :
+                case 'D':
                     return new Diamond(location);
                 case 'C':
                     return new CheckPoint(location);
-                case 'W' :
+                case 'W':
                     return new Wall(location);
-                case 'H' :
+                case 'H':
                     return new Chest(location, new Hammer());
                 case 'R':
                     return new Chest(location, new FrozenHammer());
-                case 'E' :
+                case 'E':
                     return new FragileWall(location);
             }
 
@@ -78,13 +78,13 @@ namespace DiamondRush
         {
             switch (symbol)
             {
-                case 'S' :
-                    return new SimpleSnake(location,direction); 
-                case 'M' :
+                case 'S':
+                    return new SimpleSnake(location, direction);
+                case 'M':
                     return new Monkey(location, direction);
                 case 'R':
                     return new RedSnake(location, direction);
-                case 'A' :
+                case 'A':
                     return new Archer(location, direction);
             }
 
@@ -104,7 +104,7 @@ namespace DiamondRush
                     MapOfCreatures = stream.ReadToEnd();
             }
         }
-        
+
         public static void ParseAllGameState(GameState gameState, string mapOfEnvironments, string mapOfCreatures)
         {
             var rowsEnv = mapOfEnvironments.Split(new[] {'\n'});
@@ -119,6 +119,7 @@ namespace DiamondRush
                         if (creature != null)
                             gameState.AddGameObject(creature);
                     }
+
                     if (i < rowsEnv.Length && j < rowsEnv[i].Length)
                     {
                         var environment = CharToEnvironment(rowsEnv[i][j], new Point(j, i));
@@ -127,6 +128,7 @@ namespace DiamondRush
                     }
                 }
             }
+
             gameState.UpdateCollections();
         }
     }

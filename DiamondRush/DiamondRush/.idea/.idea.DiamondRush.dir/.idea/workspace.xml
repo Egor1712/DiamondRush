@@ -115,16 +115,16 @@
         <option value="$PROJECT_DIR$/Creatures/Arrow.cs" />
         <option value="$PROJECT_DIR$/Weapon/FrozenHammer.cs" />
         <option value="$PROJECT_DIR$/Цштвщ.Designer.cs" />
-        <option value="$PROJECT_DIR$/Resources.cs" />
         <option value="$PROJECT_DIR$/Environments/Chest.cs" />
         <option value="$PROJECT_DIR$/Weapon/Hammer.cs" />
         <option value="$PROJECT_DIR$/Delegates.cs" />
         <option value="$PROJECT_DIR$/Environments/Stone.cs" />
         <option value="$PROJECT_DIR$/Weapon/IWeapon.cs" />
-        <option value="$PROJECT_DIR$/Player.cs" />
         <option value="$PROJECT_DIR$/Weapon/Democracy.cs" />
-        <option value="$PROJECT_DIR$/MyForm.cs" />
+        <option value="$PROJECT_DIR$/Player.cs" />
+        <option value="$PROJECT_DIR$/Resources.cs" />
         <option value="$PROJECT_DIR$/GameState.cs" />
+        <option value="$PROJECT_DIR$/MyForm.cs" />
       </list>
     </option>
   </component>
@@ -197,7 +197,8 @@
       <workItem from="1588755404127" duration="351000" />
       <workItem from="1588777666896" duration="284000" />
       <workItem from="1588833581638" duration="1808000" />
-      <workItem from="1588915986801" duration="20325000" />
+      <workItem from="1588915986801" duration="21319000" />
+      <workItem from="1588998394639" duration="260000" />
     </task>
     <servers />
   </component>

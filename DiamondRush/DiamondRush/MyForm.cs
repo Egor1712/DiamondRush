@@ -10,7 +10,7 @@ namespace DiamondRush
     {
         private GameState gameState;
         private readonly FlowLayoutPanel layout = new FlowLayoutPanel();
-        private readonly  Label weaponLabel= new Label();
+        private readonly Label weaponLabel = new Label();
         private readonly Label scoreLabel = new Label();
         private Rectangle size;
 
@@ -39,17 +39,17 @@ namespace DiamondRush
         }
 
         private void SetGameState()
-        { 
+        {
             size = Screen.GetBounds(Location);
-            gameState = new GameState(size.Width / GameState.Coefficient, 
-                (size.Height - layout.Height)/ GameState.Coefficient - 2,
-                new Player(new Point(2, 0), Direction.Right,100));
+            gameState = new GameState(size.Width / GameState.Coefficient,
+                (size.Height - layout.Height) / GameState.Coefficient - 2,
+                new Player(new Point(2, 0), Direction.Right, 100));
             gameState.Player.NotifyWeaponChanged += () => layout.Invalidate();
             gameState.Player.NotifyScoreChanged += UpdateScore;
             gameState.Player.NotifyHealthChanged += () => layout.Invalidate();
             gameState.Player.AddWeapon(new FrozenHammer());
             gameState.Player.AddWeapon(new Democracy());
-            ParseAllGameState(gameState,MapOfEnvironment,MapOfCreatures);
+            ParseAllGameState(gameState, MapOfEnvironment, MapOfCreatures);
         }
 
         private void SetWeaponLabel()
@@ -58,7 +58,7 @@ namespace DiamondRush
             weaponLabel.Text = "Current Weapon:";
             weaponLabel.Font = new Font("Arial", 16, FontStyle.Bold);
             weaponLabel.AutoSize = true;
-            weaponLabel.Margin = new Padding(0,0,70,0);  
+            weaponLabel.Margin = new Padding(0, 0, 70, 0);
         }
 
         private void SetScoreLabel()
@@ -66,11 +66,11 @@ namespace DiamondRush
             scoreLabel.ForeColor = Color.DarkRed;
             scoreLabel.AutoSize = true;
             scoreLabel.Font = new Font("Arial", 16, FontStyle.Bold);
-            scoreLabel.Location = new Point(weaponLabel.Width+100, 0);
+            scoreLabel.Location = new Point(weaponLabel.Width + 100, 0);
             scoreLabel.TextAlign = ContentAlignment.MiddleCenter;
             scoreLabel.Text = "Score:\n0";
         }
-        
+
         private void SetLayout()
         {
             layout.Controls.Add(weaponLabel);
@@ -91,17 +91,16 @@ namespace DiamondRush
 
         private void DrawHealth(Graphics graphics)
         {
-            var location = new Point(scoreLabel.Right+20, 0);
-            for (var i = 0; i < gameState.Player.Health && location.X+ 60*i < size.Width; i++)
+            var location = new Point(scoreLabel.Right + 20, 0);
+            for (var i = 0; i < gameState.Player.Health && location.X + 60 * i < size.Width; i++)
             {
-                graphics.DrawImage(Images["Health"], new Point(location.X+i*60, 0));
+                graphics.DrawImage(Images["Health"], new Point(location.X + i * 60, 0));
             }
         }
 
         protected override void OnKeyDown(KeyEventArgs e)
         {
             base.OnKeyDown(e);
-
             if (e.KeyCode == Keys.E)
             {
                 gameState.Player.UseWeapon(gameState);
@@ -113,6 +112,7 @@ namespace DiamondRush
                 gameState.Player.ChangeWeapon();
                 return;
             }
+
             if (!KeysToDirection.ContainsKey(e.KeyCode)) return;
             var direction = KeysToDirection[e.KeyCode];
             gameState.Player.ChangeDirection(direction);
