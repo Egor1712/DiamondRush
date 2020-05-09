@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using DiamondRush.Environments;
 using NUnit.Framework;
+using static DiamondRush.Resources;
 
 namespace DiamondRush.Tests
 {
@@ -11,9 +12,9 @@ namespace DiamondRush.Tests
         public void ChestShouldNotInteractWithOtherObjects()
         {
             var gameState = new GameState(1,3, new Player(new Point(0,0), Direction.Down));
-            gameState.ParseAllGameState("S\n\nH", "");
-            var checkPoint = gameState[2, 0].Enviroment;
-            var stone = gameState[0, 0].Enviroment;
+            ParseAllGameState(gameState, "S\n\nH", "");
+            var checkPoint = gameState[2, 0];
+            var stone = gameState[0, 0];
             Assert.AreEqual(new Point(0,0),stone.Location);
             Assert.AreEqual(new Point(0,2), checkPoint.Location);
             gameState.UpdateState();
@@ -26,8 +27,8 @@ namespace DiamondRush.Tests
         public void ChestShouldAddWeaponToPlayer()
         {
             var gameState = new GameState(1,3, new Player(new Point(0,1), Direction.Down));
-            gameState.ParseAllGameState("\n\nH", "");
-            var chest = gameState[2, 0].Enviroment as Chest;
+            ParseAllGameState(gameState, "\n\nH", "");
+            var chest = gameState[2, 0] as Chest;
             Assert.IsNotNull(chest);
             Assert.AreEqual(new Point(0,2), chest.Location);
             Assert.IsFalse(chest.IsOpened);

@@ -3,7 +3,7 @@ using static DiamondRush.Resources;
 
 namespace DiamondRush.Creatures
 {
-    public class SimpleSnake : ICreature
+    public class SimpleSnake : ICreature, ICanMove, ICanReactOnWeapon, ICanCollapseWithPlayer
     {
         public Point Location { get; private set; }
         public string ImageName => $"Snake{Direction}";
@@ -17,18 +17,13 @@ namespace DiamondRush.Creatures
             Location = startLocation;
             Direction = startDirection;
         }
-
-        public bool IsCollapseWithPlayer(GameState gameState, Player player)
-        {
-            return true;
-        }
-
-        public void DoLogicWhenCollapseWithPlayer(GameState gameState)
+        
+        public void CollapseWithPlayer(GameState gameState)
         {
             gameState.Player.BeatPlayer();
         }
 
-        public void ReactOnWeapon(Weapon.Weapon weapon)
+        public void ReactOnWeapon(Weapon.Weapon weapon, GameState gameState)
         {
             BlockedSteps = weapon.Force;
             IsFrozen = weapon.IsFrozen;
@@ -55,8 +50,8 @@ namespace DiamondRush.Creatures
                     return;
                 }
 
-                (var environment, var creature) = gameState[nextPoint];
-                if (creature != null || environment != null)
+                var gameObject = gameState[nextPoint];
+                if (gameObject != null)
                 {
                     Direction = OppositeDirection[Direction];
                     return;

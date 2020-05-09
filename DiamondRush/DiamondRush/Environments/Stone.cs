@@ -1,9 +1,10 @@
 ﻿using System.Drawing;
+using DiamondRush.Creatures;
 using static DiamondRush.Resources;
 
 namespace DiamondRush.Environments
 {
-    public class Stone : IEnvironment
+    public class Stone : IGameObject, ICanMove, ICanCollapseWithPlayer
     {
         private static readonly Direction Direction = Direction.Down;
         public string ImageName => "Stone";
@@ -11,7 +12,7 @@ namespace DiamondRush.Environments
         private int fallHeight;
 
 
-        public bool IsCollapseWithPlayer(Player player,  GameState gameState) =>
+        public bool CanCollapseWithPlayer(Player player,  GameState gameState) =>
              (player.Direction == Direction.Left || player.Direction == Direction.Right)
              && CanMoveToRightOrLeft(player.Direction, gameState);
         
@@ -30,16 +31,16 @@ namespace DiamondRush.Environments
                     return;
                 }
 
-                (var environment, var creature) = gameState[nextPoint];
-                if (creature != null && fallHeight >= 1)
+                var gameObject = gameState[nextPoint];
+                if (gameObject is ICreature creature && fallHeight >= 1)
                 {
                     Location = nextPoint;
-                    gameState.RemoveCreature(creature);
+                    gameState.RemoveGameObject(creature);
                     fallHeight++;
                     return;
                 }
 
-                if (environment == null && creature == null)
+                if (gameObject == null)
                 {
                     Location = nextPoint;
                     fallHeight++;
@@ -49,13 +50,10 @@ namespace DiamondRush.Environments
 
             fallHeight = 0;
         }
-
-        public void ReactOnWeapon(Weapon.Weapon weapon, GameState gameState)
+        
+        public void CollapseWithPlayer(GameState gameState)
         {
-        }
-
-        public void DoLogicWhenCollapseWithPlayer(GameState gameState)
-        {
+            if (!CanCollapseWithPlayer(gameState.Player, gameState)) return;
             var point = gameState.Player.Location;
             Location = new Point(point.X + DirectionToPoints[gameState.Player.Direction].X,
                 point.Y + DirectionToPoints[gameState.Player.Direction].Y);
@@ -66,8 +64,8 @@ namespace DiamondRush.Environments
             var nextPoint = new Point(DirectionToPoints[direction].X + Location.X,
                 DirectionToPoints[direction].Y + Location.Y);
             if (!gameState.InBounds(nextPoint)) return false;
-            (var environment, var creature) = gameState[nextPoint];
-            return (environment is null && creature is null);
-        }
+            var gameObject = gameState[nextPoint];
+            return gameObject == null;
+        } 
     }
 }

@@ -4,7 +4,7 @@ using static DiamondRush.Resources;
 
 namespace DiamondRush.Creatures
 {
-    public class Archer : ICreature
+    public class Archer : ICreature, ICanReactOnWeapon, ICanMove, ICanCollapseWithPlayer
     {
         public string ImageName => $"Archer";
         public Point Location { get; }
@@ -30,23 +30,18 @@ namespace DiamondRush.Creatures
             if ((gameState.Player.Location.X != Location.X && gameState.Player.Location.Y != Location.Y) ||
                 !IsPlayerNear(gameState.Player, this, 8)) return;
             var directionToShoot = GetDirectionToShoot(gameState.Player);
-            gameState.AddCreature(new Arrow(
+            gameState.AddGameObject(new Arrow(
                 new Point(Location.X + DirectionToPoints[directionToShoot].X,
                     Location.Y + DirectionToPoints[directionToShoot].Y),
                 directionToShoot));
         }
-
-        public bool IsCollapseWithPlayer(GameState gameState, Player player)
-        {
-            return true;
-        }
-
-        public void DoLogicWhenCollapseWithPlayer(GameState gameState)
+        
+        public void CollapseWithPlayer(GameState gameState)
         {
             gameState.Player.BeatPlayer();
         }
 
-        public void ReactOnWeapon(Weapon.Weapon weapon)
+        public void ReactOnWeapon(Weapon.Weapon weapon, GameState gameState)
         {
             IsFrozen = weapon.IsFrozen;
             BlockedSteps = weapon.Force;

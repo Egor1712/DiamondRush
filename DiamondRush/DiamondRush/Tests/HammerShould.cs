@@ -2,6 +2,7 @@
 using DiamondRush.Creatures;
 using DiamondRush.Weapon;
 using NUnit.Framework;
+using static DiamondRush.Resources;
 
 namespace DiamondRush.Tests
 {
@@ -12,8 +13,8 @@ namespace DiamondRush.Tests
         public void HammerShouldStopCreature()
         {
             var gameState = new GameState(2, 3, new Player(new Point(0, 0), Direction.Right));
-            gameState.ParseAllGameState(""," S");
-            var snake = gameState[0, 1].Creature as SimpleSnake;
+            ParseAllGameState(gameState, ""," S");
+            var snake = gameState[0, 1] as SimpleSnake;
             Assert.IsNotNull(snake);
             gameState.Player.AddWeapon(new Hammer());
             gameState.Player.UseWeapon(gameState);
@@ -25,8 +26,8 @@ namespace DiamondRush.Tests
         public void FrozenHammerShouldFrozeCreature()
         {
             var gameState = new GameState(2, 3, new Player(new Point(0, 0), Direction.Right));
-            gameState.ParseAllGameState(""," S");
-            var snake = gameState[0, 1].Creature as SimpleSnake;
+            ParseAllGameState(gameState, ""," S");
+            var snake = gameState[0, 1] as SimpleSnake;
             Assert.IsNotNull(snake);
             gameState.Player.AddWeapon(new FrozenHammer());
             gameState.Player.UseWeapon(gameState);

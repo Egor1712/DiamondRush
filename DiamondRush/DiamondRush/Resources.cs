@@ -12,12 +12,12 @@ namespace DiamondRush
     {
         public static readonly Dictionary<Direction, Point> DirectionToPoints = new Dictionary<Direction, Point>
         {
-            [Direction.Down] = new Point(0,1),
-            [Direction.Up] = new Point(0,-1),
-            [Direction.Left] = new Point(-1,0),
-            [Direction.Right] = new Point(1,0)
+            [Direction.Down] = new Point(0, 1),
+            [Direction.Up] = new Point(0, -1),
+            [Direction.Left] = new Point(-1, 0),
+            [Direction.Right] = new Point(1, 0)
         };
-        
+
         public static readonly Dictionary<Direction, Direction> OppositeDirection = new Dictionary<Direction, Direction>
         {
             [Direction.Down] = Direction.Up,
@@ -25,7 +25,7 @@ namespace DiamondRush
             [Direction.Right] = Direction.Left,
             [Direction.Up] = Direction.Down
         };
-        
+
         public static readonly Dictionary<Keys, Direction> KeysToDirection = new Dictionary<Keys, Direction>
         {
             [Keys.W] = Direction.Up,
@@ -33,7 +33,7 @@ namespace DiamondRush
             [Keys.A] = Direction.Left,
             [Keys.S] = Direction.Down
         };
-        
+
         public static readonly Dictionary<string, Image> Images = new Dictionary<string, Image>();
         public static string MapOfEnvironment;
         public static string MapOfCreatures;
@@ -49,42 +49,42 @@ namespace DiamondRush
             }
         }
 
-        public static IEnvironment CharToEnvironment(char symbol, Point location)
+        private static IGameObject CharToEnvironment(char symbol, Point location)
         {
             switch (symbol)
             {
                 case 'S':
-                    return new Stone{Location = location};
+                    return new Stone {Location = location};
                 case 'F':
                     return new Foliage(location);
-                case 'D' :
+                case 'D':
                     return new Diamond(location);
                 case 'C':
                     return new CheckPoint(location);
-                case 'W' :
+                case 'W':
                     return new Wall(location);
-                case 'H' :
-                    return new Chest(new Hammer(), location);
+                case 'H':
+                    return new Chest(location, new Hammer());
                 case 'R':
-                    return new Chest(new FrozenHammer(),location);
-                case 'E' :
+                    return new Chest(location, new FrozenHammer());
+                case 'E':
                     return new FragileWall(location);
             }
 
             return null;
         }
 
-        public static ICreature CharToCreature(char symbol, Point location, Direction direction = Direction.Down)
+        public static IGameObject CharToCreature(char symbol, Point location, Direction direction = Direction.Down)
         {
             switch (symbol)
             {
-                case 'S' :
-                    return new SimpleSnake(location,direction); 
-                case 'M' :
+                case 'S':
+                    return new SimpleSnake(location, direction);
+                case 'M':
                     return new Monkey(location, direction);
                 case 'R':
                     return new RedSnake(location, direction);
-                case 'A' :
+                case 'A':
                     return new Archer(location, direction);
             }
 
@@ -103,7 +103,33 @@ namespace DiamondRush
                 else
                     MapOfCreatures = stream.ReadToEnd();
             }
+        }
 
+        public static void ParseAllGameState(GameState gameState, string mapOfEnvironments, string mapOfCreatures)
+        {
+            var rowsEnv = mapOfEnvironments.Split(new[] {'\n'});
+            var rowsCr = mapOfCreatures.Split(new[] {'\n'});
+            for (var i = 0; i < gameState.Height; i++)
+            {
+                for (var j = 0; j < gameState.Width; j++)
+                {
+                    if (i < rowsCr.Length && j < rowsCr[i].Length)
+                    {
+                        var creature = CharToCreature(rowsCr[i][j], new Point(j, i));
+                        if (creature != null)
+                            gameState.AddGameObject(creature);
+                    }
+
+                    if (i < rowsEnv.Length && j < rowsEnv[i].Length)
+                    {
+                        var environment = CharToEnvironment(rowsEnv[i][j], new Point(j, i));
+                        if (environment != null)
+                            gameState.AddGameObject(environment);
+                    }
+                }
+            }
+
+            gameState.UpdateCollections();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using NUnit.Framework;
+using static DiamondRush.Resources;
 
 namespace DiamondRush.Tests
 {
@@ -10,8 +11,8 @@ namespace DiamondRush.Tests
         public void FoliageShouldNotFall()
         {
             var gameState = new GameState(1,2,null);
-            gameState.ParseAllGameState(@"F", "");
-            var foliage = gameState[0, 0].Enviroment;
+            ParseAllGameState(gameState, @"F", "");
+            var foliage = gameState[0, 0];
             Assert.AreEqual(new Point(0,0), foliage.Location);
             gameState.UpdateState();
             Assert.AreEqual(new Point(0,0), foliage.Location);
@@ -21,12 +22,13 @@ namespace DiamondRush.Tests
         public void FoliageShouldDisappearAfterPlayerStep()
         {
             var gameState = new GameState(1,2,new Player(new Point(0,0),Direction.Down));
-            gameState.ParseAllGameState("\nF", "");
-            var foliage = gameState[1, 0].Enviroment;
+            ParseAllGameState(gameState, "\nF", "");
+            var foliage = gameState[1, 0];
             Assert.AreEqual(new Point(0,1),foliage.Location);
             gameState.Player.Move(gameState, Direction.Down);
+            gameState.UpdateState();
             Assert.AreEqual(new Point(0,1), gameState.Player.Location);
-            Assert.IsNull(gameState[1,0].Enviroment);
+            Assert.IsNull(gameState[1,0]);
         }
     }
 }

@@ -8,6 +8,23 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="DiamondRush" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
@@ -21,20 +38,19 @@
     <setting file="file://$PROJECT_DIR$/Tests/MonkeyShould.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Creatures/RedSnake.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Creatures/Monkey.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/IDrawable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Environments/Stone.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Environments/Wall.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Environments/wall.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Environments/Foliage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Environments/IEnvironment.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tests/HammerShould.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Environments/Diamond.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tests/StoneShould.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Environments/CheckPoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Weapon/Democracy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Weapon/Hammer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Creatures/ICreature.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Creatures/SimpleSnake.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Weapon/IWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Weapon/FrozenHammer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Delegates.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tests/WallShould.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Environments/Chest.cs" root0="FORCE_HIGHLIGHTING" />
@@ -46,10 +62,11 @@
     <setting file="file://$PROJECT_DIR$/Form1.Designer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tests/FoliageShould.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MyForm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8B7EA961-FD0C-4C80-A0AB-48FDBB2EB1B1/43/830da37c/EventHandlerList.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/nunit/nunit/c933a883ea25263ec575a654dae69fa38000edd9/src/NUnitFramework/framework/Internal/Execution/SimpleWorkItemDispatcher.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/nunit/nunit/c933a883ea25263ec575a654dae69fa38000edd9/src/NUnitFramework/framework/Internal/Execution/CompositeWorkItem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/04FF2274-FFE3-42EA-B15A-BE272D0A6B6E/3A/Control.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/04FF2274-FFE3-42EA-B15A-BE272D0A6B6E/3A/Control.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tests/RedSnakeShould.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Environments/FragileWall.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tests/ArcherShould.cs" root0="FORCE_HIGHLIGHTING" />
@@ -57,57 +74,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/IEnvironment.cs" />
-        <option value="$PROJECT_DIR$/CheckPoint.cs" />
-        <option value="$PROJECT_DIR$/Stone.cs" />
-        <option value="$PROJECT_DIR$/Diamond.cs" />
-        <option value="$PROJECT_DIR$/ICreature.cs" />
-        <option value="$PROJECT_DIR$/SimpleSnake.cs" />
-        <option value="$PROJECT_DIR$/StoneShould.cs" />
-        <option value="$PROJECT_DIR$/FoliageShould.cs" />
-        <option value="$PROJECT_DIR$/SimplleSnakeShould.cs" />
         <option value="$PROJECT_DIR$/wall.cs" />
         <option value="$PROJECT_DIR$/Tests/SimplleSnakeShould.cs" />
         <option value="$PROJECT_DIR$/IWeapon.cs" />
-        <option value="$PROJECT_DIR$/Environments/wall.cs" />
         <option value="$PROJECT_DIR$/Environments/FrozenDiamond.cs" />
         <option value="$PROJECT_DIR$/Creatures/WeaponsForm.Designer.cs" />
         <option value="$PROJECT_DIR$/WeaponChooseForm.Designer.cs" />
         <option value="$PROJECT_DIR$/WeaponChooseForm.cs" />
-        <option value="$PROJECT_DIR$/Weapon/Hammer.cs" />
-        <option value="$PROJECT_DIR$/Weapon/FrozenHammer.cs" />
-        <option value="$PROJECT_DIR$/Creatures/MoveLogic.cs" />
-        <option value="$PROJECT_DIR$/Weapon/IWeapon.cs" />
-        <option value="$PROJECT_DIR$/Resources.cs" />
         <option value="$PROJECT_DIR$/Tests/fOLIAGEsHOULD.cs" />
-        <option value="$PROJECT_DIR$/Tests/ArcherShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/CheckPointShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/ChestShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/FoliageShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/HammerShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/MonkeyShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/RedSnakeShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/SimpleSnakeShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/WallShould.cs" />
-        <option value="$PROJECT_DIR$/Tests/StoneShould.cs" />
-        <option value="$PROJECT_DIR$/MyForm.cs" />
-        <option value="$PROJECT_DIR$/GameState.cs" />
+        <option value="$PROJECT_DIR$/Environments/Wall.cs" />
+        <option value="$PROJECT_DIR$/Drawable.cs" />
+        <option value="$PROJECT_DIR$/IDrawable.cs" />
+        <option value="$PROJECT_DIR$/ICanMove.cs" />
+        <option value="$PROJECT_DIR$/ICanReactOnWeapon.cs" />
+        <option value="$PROJECT_DIR$/ICanCollapseWithPlayer.cs" />
+        <option value="$PROJECT_DIR$/IGameObject.cs" />
         <option value="$PROJECT_DIR$/Environments/IEnvironment.cs" />
         <option value="$PROJECT_DIR$/Environments/CheckPoint.cs" />
-        <option value="$PROJECT_DIR$/Environments/Chest.cs" />
-        <option value="$PROJECT_DIR$/Environments/Diamond.cs" />
         <option value="$PROJECT_DIR$/Environments/Foliage.cs" />
         <option value="$PROJECT_DIR$/Environments/FragileWall.cs" />
-        <option value="$PROJECT_DIR$/Environments/Wall.cs" />
-        <option value="$PROJECT_DIR$/Environments/Stone.cs" />
+        <option value="$PROJECT_DIR$/Environments/wall.cs" />
         <option value="$PROJECT_DIR$/Creatures/ICreature.cs" />
+        <option value="$PROJECT_DIR$/Environments/Diamond.cs" />
+        <option value="$PROJECT_DIR$/Creatures/MoveLogic.cs" />
+        <option value="$PROJECT_DIR$/Tests/WallShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/SimpleSnakeShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/HammerShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/ChestShould.cs" />
         <option value="$PROJECT_DIR$/Creatures/Archer.cs" />
         <option value="$PROJECT_DIR$/Creatures/Monkey.cs" />
         <option value="$PROJECT_DIR$/Creatures/RedSnake.cs" />
         <option value="$PROJECT_DIR$/Creatures/SimpleSnake.cs" />
-        <option value="$PROJECT_DIR$/Creatures/Arrow.cs" />
-        <option value="$PROJECT_DIR$/Player.cs" />
+        <option value="$PROJECT_DIR$/Tests/ArcherShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/CheckPointShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/FoliageShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/MonkeyShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/RedSnakeShould.cs" />
+        <option value="$PROJECT_DIR$/Tests/StoneShould.cs" />
         <option value="$PROJECT_DIR$/Program.cs" />
+        <option value="$PROJECT_DIR$/Creatures/Arrow.cs" />
+        <option value="$PROJECT_DIR$/Weapon/FrozenHammer.cs" />
+        <option value="$PROJECT_DIR$/Цштвщ.Designer.cs" />
+        <option value="$PROJECT_DIR$/Environments/Chest.cs" />
+        <option value="$PROJECT_DIR$/Weapon/Hammer.cs" />
+        <option value="$PROJECT_DIR$/Delegates.cs" />
+        <option value="$PROJECT_DIR$/Environments/Stone.cs" />
+        <option value="$PROJECT_DIR$/Weapon/IWeapon.cs" />
+        <option value="$PROJECT_DIR$/Weapon/Democracy.cs" />
+        <option value="$PROJECT_DIR$/Player.cs" />
+        <option value="$PROJECT_DIR$/Resources.cs" />
+        <option value="$PROJECT_DIR$/GameState.cs" />
+        <option value="$PROJECT_DIR$/MyForm.cs" />
       </list>
     </option>
   </component>
@@ -175,6 +192,13 @@
       <workItem from="1588308054510" duration="16778000" />
       <workItem from="1588348521401" duration="3878000" />
       <workItem from="1588394925443" duration="3449000" />
+      <workItem from="1588594175168" duration="2562000" />
+      <workItem from="1588742133184" duration="8968000" />
+      <workItem from="1588755404127" duration="351000" />
+      <workItem from="1588777666896" duration="284000" />
+      <workItem from="1588833581638" duration="1808000" />
+      <workItem from="1588915986801" duration="21319000" />
+      <workItem from="1588998394639" duration="260000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using NUnit.Framework;
+using static DiamondRush.Resources;
 
 namespace DiamondRush.Tests
 {
@@ -9,11 +10,12 @@ namespace DiamondRush.Tests
         [Test]
         public void PlayerShouldAppearIntoCheckPointAfterDeath()
         {
-            var gameState = new GameState(1,4,new Player(new Point(0,3), Direction.Down, 1));
-            gameState.ParseAllGameState("S\n\n\nC", "");
-            var stone = gameState[0, 0].Enviroment;
+            var gameState = new GameState(1,4,new Player(new Point(0,2), Direction.Down, 1));
+            ParseAllGameState(gameState, "S\n\n\nC", "");
+            var stone = gameState[0, 0];
             Assert.AreEqual(new Point(0,0),stone.Location );
-            Assert.AreEqual(new Point(0,3), gameState.Player.Location);
+            Assert.AreEqual(new Point(0,2), gameState.Player.Location);
+            gameState.Player.Move(gameState, Direction.Down);
             gameState.UpdateState();
             gameState.Player.Move(gameState, Direction.Up);
             Assert.AreEqual(new Point(0,1),stone.Location );
@@ -24,10 +26,10 @@ namespace DiamondRush.Tests
         [Test]
         public void CheckPointShouldNotInteractWithOtherObjects()
         {
-            var gameState = new GameState(1,3, new Player(new Point(0,0), Direction.Down));
-            gameState.ParseAllGameState("S\n\nC", "");
-            var checkPoint = gameState[2, 0].Enviroment;
-            var stone = gameState[0, 0].Enviroment;
+            var gameState = new GameState(1,3, new Player(new Point(0,0), Direction.Down)); 
+            ParseAllGameState(gameState, "S\n\nC", "");
+            var checkPoint = gameState[2, 0];
+            var stone = gameState[0, 0];
             Assert.AreEqual(new Point(0,0),stone.Location);
             Assert.AreEqual(new Point(0,2), checkPoint.Location);
             gameState.UpdateState();

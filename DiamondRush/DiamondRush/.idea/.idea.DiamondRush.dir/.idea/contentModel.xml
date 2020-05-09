@@ -12,12 +12,12 @@
       <e p="Creatures" t="Include">
         <e p="Archer.cs" t="Include" />
         <e p="Arrow.cs" t="Include" />
-        <e p="ICreature.cs" t="Include" />
         <e p="Monkey.cs" t="Include" />
         <e p="MoveLogic.cs" t="Include" />
         <e p="RedSnake.cs" t="Include" />
         <e p="SimpleSnake.cs" t="Include" />
       </e>
+      <e p="Delegates.cs" t="Include" />
       <e p="DiamondRush.csproj" t="IncludeRecursive" />
       <e p="Direction.cs" t="Include" />
       <e p="Environments" t="Include">
@@ -26,13 +26,19 @@
         <e p="Diamond.cs" t="Include" />
         <e p="Foliage.cs" t="Include" />
         <e p="FragileWall.cs" t="Include" />
-        <e p="IEnvironment.cs" t="Include" />
         <e p="Stone.cs" t="Include" />
         <e p="wall.cs" t="Include" />
       </e>
       <e p="Form1.Designer.cs" t="Include" />
       <e p="GameState.cs" t="Include" />
-      <e p="IDrawable.cs" t="Include" />
+      <e p="Interfaces" t="Include">
+        <e p="ICanCollapseWithPlayer.cs" t="Include" />
+        <e p="ICanMove.cs" t="Include" />
+        <e p="ICanReactOnWeapon.cs" t="Include" />
+        <e p="ICreature.cs" t="Include" />
+        <e p="IDrawable.cs" t="Include" />
+        <e p="IGameObject.cs" t="Include" />
+      </e>
       <e p="MyForm.cs" t="Include" />
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
@@ -58,6 +64,7 @@
         <e p="WallShould.cs" t="Include" />
       </e>
       <e p="Weapon" t="Include">
+        <e p="Democracy.cs" t="Include" />
         <e p="FrozenHammer.cs" t="Include" />
         <e p="Hammer.cs" t="Include" />
         <e p="IWeapon.cs" t="Include" />

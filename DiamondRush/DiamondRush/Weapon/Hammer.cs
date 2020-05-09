@@ -6,7 +6,7 @@
         {
             IsFrozen = false;
             Force = 12;
-            ImageName = "Simple Hummer";
+            ImageName = "Hammer";
         }
     }
 }

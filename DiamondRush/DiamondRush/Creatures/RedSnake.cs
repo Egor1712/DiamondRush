@@ -3,7 +3,7 @@ using static DiamondRush.Creatures.MoveLogic;
 
 namespace DiamondRush.Creatures
 {
-    public class RedSnake : ICreature
+    public class RedSnake : ICreature, ICanMove, ICanReactOnWeapon, ICanCollapseWithPlayer
     {
         public string ImageName => $"RedSnakeRight";
         public Point Location { get; private set; }
@@ -16,19 +16,15 @@ namespace DiamondRush.Creatures
             Location = location;
             Direction = direction;
         }
+        
 
-        public bool IsCollapseWithPlayer(GameState gameState, Player player)
-        {
-            return true;
-        }
-
-        public void DoLogicWhenCollapseWithPlayer(GameState gameState)
+        public void CollapseWithPlayer(GameState gameState)
         {
             gameState.Player.BeatPlayer();
 
         }
 
-        public void ReactOnWeapon(Weapon.Weapon weapon)
+        public void ReactOnWeapon(Weapon.Weapon weapon, GameState gameState)
         {
             IsFrozen = weapon.IsFrozen;
             BlockedSteps = weapon.Force;
